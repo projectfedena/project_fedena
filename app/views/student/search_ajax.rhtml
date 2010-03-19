@@ -1,0 +1,16 @@
+<% if @students.nil? %>
+  <div id="no_result">No users found</div>
+<% else %>
+  <% @students.each do |r| %>
+    <div id="ajax_result">
+      <% link_value = r.first_name + " " + r.last_name %>
+      <%= link_to link_value, :controller => "student", :action => "profile", :id => r.id %><br/>
+      <% unless r.status == "Former" %>
+        <small>Clas & Sec: <%= r.course.grade %> <%= r.course.section %></small>
+      <% else %>
+        <small>Former student</small>
+      <% end %>
+      <small><br/>Adm No.<%= r.admission_no %></small> <%= @st.to_s %>
+    </div>
+  <% end %>
+<% end %>

@@ -1,0 +1,58 @@
+<div id="content-header">
+  <img src="/images/examination/index/page_logo.jpg" alt="" />
+  <h1>Examinations</h1>
+  <h3>Manage examinations</h3>
+  <div id="app-back-button">
+    <%= link_to image_tag("/images/buttons/back.png", :border => 0), :back %>
+  </div>
+</div>
+
+<div id="page-yield">
+
+  <% unless flash[:notice].nil? %><p class="flash-msg"><%= flash[:notice] %></p><% end %>
+
+  <% if permitted_to? :create_examtype,:exam %>
+  <div class="link-box">
+    <div class="link-heading"> <%= link_to "Create new exam type", :controller => "exam", :action => "create_examtype" %> </div>
+    <div class="link-descr"> Create a new examination type by filling out these details. </div>
+  </div>
+
+  <div class="link-box">
+    <div class="link-heading"> <%= link_to "Create new exam", :controller => "exam", :action => "create" %> </div>
+    <div class="link-descr"> Create a new examination by filling out these details. </div>
+  </div>
+  <% end %>
+
+  <div class="link-box">
+    <div class="link-heading"> <%= link_to "Exam Timetable View", :controller => "exam", :action => "timetable" %> </div>
+    <div class="link-descr"> Create a new examination by filling out these details. </div>
+  </div>
+
+  <%if permitted_to? :add,:examination_result%>
+  <div class="link-box">
+    <div class="link-heading"> <%= link_to "Enter results", :controller => "examination_result", :action => "add" %>  </div>
+    <div class="link-descr">Enter or edit the results of an exam for all students in a class.</div>
+  </div>
+  <%end%>
+
+  <% if permitted_to? :edit_grading,:exam %>
+  <div class="link-box">
+    <div class="link-heading"> <%= link_to "Edit grading system", :controller => "exam", :action => "edit_grading" %> </div>
+    <div class="link-descr"> Edit the marks range for the grading system </div>
+  </div>
+  <% end %>
+ <% if permitted_to? :view_one_sub,:examination_result %>
+  <div class="link-box">
+    <div class="link-heading"> <%= link_to "View results (one subject)", :controller => "examination_result", :action => "view_one_sub" %> </div>
+    <div class="link-descr">  View the examination results of a class in a particular exam for one subject.  </div>
+  </div>
+
+  <div class="link-box">
+    <div class="link-heading"> <%= link_to "View results (all subjects)", :controller => "examination_result", :action => "view_all_subs" %>  </div>
+    <div class="link-descr"> View the examination results of a class in a particular exam for all subjects. </div>
+  </div>
+  <% end %>
+
+  <div class="extender"> </div>
+
+</div>

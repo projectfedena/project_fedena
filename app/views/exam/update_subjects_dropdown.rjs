@@ -1,0 +1,2 @@
+page.replace_html "subjects-dropdown", :partial => 'subjects_dropdown'
+page.replace_html 'exams-list', :partial => 'exams_list'

@@ -1,0 +1,3 @@
+
+<%= select :examination, :subject_id, @subjects.map {|s| [s.name, s.id]},
+      :prompt => "Select a subject" %>

@@ -1,0 +1,15 @@
+
+<% string = @to_users.inject('') { |arr, u| arr + u.to_s + ',' }.chomp(',') %>
+
+<div class ="scrolable" >
+  <div class="scroll-inside">
+      <%= link_to "All", '#', :onClick => "add_all_recipient('#{string}')" %> <br/>
+    <% @to_users.each do |t| %>
+      <% user = User.find(t) %>
+      <%= link_to user.first_name, '#', :onClick => "add_recipient(#{t})" %> <br/>
+    <% end %>
+  </div>
+</div>
+
+
+

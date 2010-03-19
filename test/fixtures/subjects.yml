@@ -1,0 +1,32 @@
+
+sub1:
+  id: 1
+  name: English
+  code: ENG
+  course_id: 1
+  no_exams: false
+  max_hours_week: 8
+
+sub2:
+  id: 2
+  name: Science
+  code: HIN
+  course_id: 1
+  no_exams: false
+  max_hours_week: 8
+
+sub3:
+  id: 3
+  name: Maths
+  code: MAT1
+  course_id: 1
+  no_exams: false
+  max_hours_week: 8
+
+s4:
+  id: 4
+  name: Physical Education
+  code: PT
+  course_id: 1
+  no_exams: true
+  max_hours_week: 4

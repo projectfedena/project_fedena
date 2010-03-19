@@ -1,0 +1,33 @@
+
+
+  <div id ="res_table">
+    <div id="result-info">
+      <%= @course.grade %> - <%= @course.section %> : <%= @examtype.name %>
+    </div>
+
+    <div class="res_tr">
+      <div class="res_td_name"><b>Name</b></div>
+      <%@subjects.each do |sub|%>
+        <div class="res_td"><b><%= sub.code %></b></div>
+      <%end%>
+    </div>
+
+    <% @students.each do |s| %>
+
+      <div class="res_tr">
+        <div class="res_td_name"><%= link_to s.first_name + " " + s.last_name,
+            :controller => "master_student",
+            :action => "profile", :id => s.id %></div>
+          <%- @subjects.each do |sub| -%>
+            <%- @res.each do |res| -%>
+              <%- if res.student_id == s.id and res.examination.subject_id == sub.id -%>
+              <div class="res_td"> <%= res.marks -%> <small>(<%= res.grading.name unless res.grading.nil? %></small>)</div>
+            <%- end -%>
+          <%- end -%>
+        <%- end -%>
+      </div>
+    <%- end -%>
+    <div class="btn"><%= link_to image_tag("/images/buttons/view_pdf_report.png", :border => 0),  :action => "all_sub_pdf", :id => @course.id,:id2 => @examtype.id, :format => 'pdf' %></div>
+
+
+  </div>

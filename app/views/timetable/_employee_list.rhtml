@@ -1,0 +1,5 @@
+
+    <% @employees_subject.each do |e| %>
+      <div class="employees_subject" id="emp_sub_<%= e.id %>"> <%= e.employee.first_name %> </div>
+      <%= draggable_element("emp_sub_#{e.id}", :revert => true) %>
+    <% end %>

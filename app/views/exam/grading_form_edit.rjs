@@ -1,0 +1,1 @@
+page.replace_html 'grading-form', :partial => 'grading_form_edit'

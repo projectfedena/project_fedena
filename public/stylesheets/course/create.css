@@ -1,0 +1,34 @@
+
+.submit-area {
+    float : left;
+    margin : 22px 0 0 20px;
+}
+#course-list {
+    clear : both;
+    padding : 10px 0 40px 40px;
+}
+#course-list li {
+    background : #fff url(../../images/_global/list-bg-repeat.jpg) repeat;
+    color : #444;
+    height : 1.5em; width : 30em;
+    list-style-type : none;
+    padding : 0.5em 0 0 5em;
+}
+#course-list li.heading {
+    background : none;
+    font-weight : bold;
+}
+#course-list li div {
+    float : left;
+}
+#course-list li div.course-name {
+    width : 350px;
+}
+#course-list li div.course-edit,
+#course-list li div.course-delete {
+    font-size : 0.9em;
+    width : 50px;
+}
+#course-list li div a {
+    color : #000;
+}

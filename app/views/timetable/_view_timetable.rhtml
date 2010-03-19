@@ -1,0 +1,32 @@
+
+    <div id="timetable">
+      <div class="timetable_tr">
+        <div class="timetable_td_tl"> &nbsp;</div>
+        <% @period_timing.each do |pt| %>
+          <div class="timetable_td_top"><%= pt.name%> </div>
+        <% end %>
+      </div><!-- timetable_tr -->
+
+      <% @day.each do |d| %>
+        <div class="timetable_tr">
+          <div class="timetable_td_left"> <%= d.name[0,3].upcase %> </div>
+
+          <% @period_timing.each do |pt1| %>
+
+            <div class="timetable_td">
+              <% tte = TimetableEntry.find_by_timetable_week_day_id_and_period_timing_id_and_course_id(d.id, pt1.id, @course.id) %>
+
+              <% unless tte.nil? or tte.subject.nil? %>
+                <% subject_name = "subject_name_#{tte.id}" %>
+                <div class="tt-subject" id="<%= subject_name%>">
+                  <%= tte.subject.name %>
+                </div>
+              <% end %>
+            </div><!-- timetable_td -->
+
+          <% end %>
+
+        </div><!-- timetable_tr -->
+      <% end %>
+
+    </div>

@@ -1,0 +1,30 @@
+
+e1:
+  id: 1
+  examination_type_id: 1
+  subject_id: 1
+  date: <%= Date.today + 10.days %>
+  max_marks: 20
+  weightage: 10
+  created_at: <%= Date.today %>
+  updated_at: <%= Date.today %>
+
+e2:
+  id: 2
+  examination_type_id: 1
+  subject_id: 2
+  date: <%= Date.today + 10.days %>
+  max_marks: 20
+  weightage: 10
+  created_at: <%= Date.today %>
+  updated_at: <%= Date.today %>
+
+e3:
+  id: 3
+  examination_type_id: 1
+  subject_id: 2
+  date: <%= Date.today + 10.days %>
+  max_marks: 20
+  weightage: 10
+  created_at: <%= Date.today %>
+  updated_at: <%= Date.today %>

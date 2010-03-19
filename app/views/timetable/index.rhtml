@@ -1,0 +1,35 @@
+<div id="content-header">
+  <img src="/images/show_news/show_news_logo.png" />
+  <h1>Timetable</h1>
+  <h3>Home</h3>
+   <div id="app-back-button"> <%= link_to image_tag("/images/buttons/back.png", :border => 0), :back %> </div>
+</div>
+
+<div id="page-yield">
+
+  <% unless flash[:notice].nil? %>
+    <p class="flash-msg"> <%= flash[:notice] %> </p>
+  <% end %>
+
+  <%if permitted_to? :edit,:timetable%>
+  
+  <div class="link-box">
+    <div class="link-heading"><%= link_to "Create/Edit Timetable", :action => "select_class" %></div>
+    <div class="link-descr">Select a class and edit the timetable for that class.</div>
+  </div>
+ 
+  <div class="link-box">
+    <div class="link-heading"><%= link_to "Set class timings", :controller => "class_timing", :action => "index"   %></div>
+    <div class="link-descr">Select a class and edit the timetable for that class.</div>
+  </div>
+  <%  end%>
+
+  
+  <%  if permitted_to? :view,:timetable%>
+  <div class="link-box">
+    <div class="link-heading"><%= link_to "View Timetables", :action => "view" %></div>
+    <div class="link-descr">View the timetable for a class.</div>
+  </div>
+   <%  end%>
+  
+</div>

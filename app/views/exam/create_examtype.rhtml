@@ -1,0 +1,37 @@
+<div id="content-header">
+  <img src="/images/examination/index/page_logo.jpg" alt="" />
+  <h1>Examination</h1>
+  <h3>Edit an examination type</h3>
+  <div id="app-back-button">
+    <%= link_to image_tag("/images/buttons/back.png", :border => 0), :back %>
+  </div>
+</div>
+
+<div id="page-yield">
+
+  <% unless flash[:notice].nil? %>
+    <p class="flash-msg"> <%= flash[:notice] %> </p>
+  <% end %>
+
+  <% form_for :examination_type do |e| %>
+
+    <%= error_messages_for 'exam_type' %>
+
+    <div class="label-field-pair">
+      <label for="examination_type_name">Name of exam type</label>
+      <div class="text-input-bg"> <%= e.text_field :name %> </div>
+    </div>
+
+    <div class="label-checkbox-pair">
+      <%= e.check_box "primary" %>
+      <label for="examination_type_primary">This examination is primary</label>
+    </div>
+
+    <div class="submit-area">
+      <%= image_submit_tag "/images/buttons/create.png" %>
+    </div>
+  <% end %>
+
+  <div id="examtypes-list"><%= render :partial => "examtypes_list" %></div>
+
+</div>

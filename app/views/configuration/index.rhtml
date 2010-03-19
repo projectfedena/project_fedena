@@ -1,0 +1,55 @@
+<div id="content-header">
+  <img src="/images/show_news/show_news_logo.png" />
+  <h1>Configuration</h1>
+  <h3>Configuration home</h3>
+   <div id="app-back-button"> <%= link_to image_tag("/images/buttons/back.png", :border => 0), :back %> </div>
+</div>
+
+<div id="page-yield">
+
+  <% unless flash[:notice].nil? %>
+    <p class="flash-msg"> <%= flash[:notice] %> </p>
+  <% end %>
+
+  <% if permitted_to? :create,:course %>
+    <div class="link-box">
+      <div class="link-heading"><%= link_to "Add new classes", :controller => "course", :action => "create" %></div>
+      <div class="link-descr">Add a new class or section for this academic year.</div>
+    </div>
+  <% end %>
+
+  <% if permitted_to? :index,:subject %>
+  <div class="link-box">
+    <div class="link-heading"><%= link_to "Subject Master", :controller => "subject", :action => "index" %></div>
+    <% if permitted_to? :create,:subject %>
+      <div class="link-descr">Select the appropriate class and add a new subject to that class.</div>
+    <% else %>
+      <div class="link-descr">Select the appropriate class and view subject to that class.</div>
+    <% end %>
+  </div>
+  <%end%>
+
+  <% if permitted_to? :index,:academic_year %>
+    <div class="link-box">
+      <div class="link-heading"><%= link_to "New academic year", :controller => "academic_year", :action => "index" %></div>
+      <div class="link-descr">Follow the steps to start a new academic year.</div>
+    </div>
+  <% end %>
+
+  <% if permitted_to? :index,:holiday %>
+  <div class="link-box">
+    <div class="link-heading"><%= link_to "Holiday settings", :controller=>"holiday",:action => "index" %></div>
+    <div class="link-descr">Add and edit holidays/vacations for school.</div>
+  </div>
+  <% end %>
+
+  <% if permitted_to? :settings,:configuration %>
+  <div class="link-box">
+    <div class="link-heading"><%= link_to "General settings", :action => "settings" %></div>
+    <div class="link-descr">Set some general configurations related to attendance, examinations, etc.</div>
+  </div>
+  <% end %>
+
+
+
+</div>

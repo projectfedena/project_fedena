@@ -1,0 +1,28 @@
+<div id="content-header">
+  <img src="/images/student_details/student_details_logo.jpg" />
+  <h1>Attendance Management</h1>
+  <h3>Select Options</h3>
+   <div id="app-back-button"> <%= link_to image_tag("/images/buttons/back.png", :border => 0), :back %> </div>
+</div>
+
+<div id="page-yield">
+
+  <% unless flash[:notice].nil? %>
+    <p class="flash-msg"> <%= flash[:notice] %> </p>
+  <% end %>
+  
+  <% if permitted_to? :register, :attendance %>
+  <div class="link-box">
+    <div class="link-heading"> <%= link_to "Student Attendance Register", :controller => "attendance", :action => "register" %></div>
+    <div class="link-descr"> Enter the attendance details for a class for a given day or subject. </div>
+  </div>
+  <%end%>
+  
+  <% if permitted_to? :report, :attendance %>
+  <div class="link-box">
+    <div class="link-heading"> <%= link_to "Student Attendance Report", :controller => "attendance", :action => "report" %> </div>
+    <div class="link-descr"> Generate reports for the attendance for a class. </div>
+  </div>
+  <%end%>
+
+</div>

@@ -1,0 +1,37 @@
+<div id="content-header">
+  <img src="/images/show_news/show_news_logo.png" />
+  <h1>Subjects</h1>
+  <h3>View All</h3>
+  <div id="app-back-button">
+    <%= link_to image_tag("/images/buttons/back.png", :border => 0), :back %>
+  </div>
+</div>
+
+<% if permitted_to? :create,:subject %>
+<div id="inner-tab-menu">
+  <ul>
+    <li><%= link_to 'Add subject', :controller => 'subject', :action => 'create' %></li>
+  </ul>
+</div>
+<% end %>
+
+<div id="page-yield">
+
+  <% unless flash[:notice].nil? %> <p class="flash-msg"> <%= flash[:notice] %> </p> <% end %>
+
+    <div id="class-select">
+      <p>In the form below, select each class to view subject:</p>
+      <div class="label-field-pair">
+        <div class="text-input-bg">
+          <%= select :course, :old, @courses.map {|c| [c.grade + " - " + c.section, c.id]},
+                     {:prompt => "Select a class"},
+                     {:onchange => "#{remote_function(:url  => {:action => "list_subjects"},
+                                                                :update => "subject-list",
+                                                                :with => "'course_id='+value")}"} %>
+        </div>
+      </div>
+    </div>
+
+    <div id="subject-list"> </div>
+  
+</div>

@@ -1,0 +1,46 @@
+<div id="content-header">
+  <img src="/images/user_profile/user_profile_logo.jpg" />
+  <h1>User Profile</h1>
+  <h3>User Information</h3>
+  <div id="app-back-button"> <%= link_to image_tag("/images/buttons/back.png", :border => 0), :controller => 'user' %> </div>
+</div>
+
+<% if @current_user.id == @user.id %>
+  <div id="inner-tab-menu">
+    <ul><li><%= link_to "Change pw", :controller => "user", :action => "change_password" %></li></ul>
+  </div>
+<% end %>
+
+<div id="page-yield">
+
+  <% unless flash[:notice].nil? %><p class="flash-msg"> <%= flash[:notice] %> </p><% end %>
+
+  <div id="profile_view">
+    <div class="profile_info_area1">
+      <div class="profile_info_label1">Username</div>
+      <div class="profile_info_text"> <%= @user.username %> </div>
+
+      <div class="profile_info_label1">Name</div>
+      <div class="profile_info_text"> <%= @user.first_name %> <%= @user.last_name %> </div>
+    </div>
+
+    <div class="profile_info_area1">
+      <div class="profile_info_label1">Role</div>
+      <div class="profile_info_text"> <%= @user.role_name %> </div>
+
+      <div class="profile_info_label1">Email</div>
+      <div class="profile_info_text"> <%= @user.email %> </div>
+    </div>
+  </div>
+
+    <% if @current_user.admin? %>
+      <div class="submit-buttons">
+        <%= link_to image_tag("/images/buttons/edit.png", :border=>0), :class => "user_button", :controller => "user", :action => "edit", :id => @user.username %>
+        <%= link_to image_tag("/images/buttons/delete.png", :border=>0), {:class => "user_button", :controller => "user", :action => "delete", :id => @user.username}, :confirm=>"Are you sure you want to delete this USER?" %>
+        <% unless @current_user.id == @user.id %>
+           <%= link_to image_tag("/images/buttons/edit_role.png", :border=>0), :class => "user_button", :controller => "user", :action => "edit_privilege", :id => @user.username %>
+        <% end %>
+      </div>
+   <% end %>
+
+</div>

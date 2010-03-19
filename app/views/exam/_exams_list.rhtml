@@ -1,0 +1,9 @@
+<ul><%- @exams.each do |exam| -%>
+<li>
+  <div class="exam-name"><%= exam.subject.name %> - <%= exam.examination_type.name %></div>
+  <div class="exam-manage-links"> <%= link_to "Edit", :action => 'edit', :id => exam.id %> </div>
+  <div class="exam-manage-links"> <%= link_to "Delete", {:action => 'delete', :id => exam.id},:confirm=>"are u sure?"%> </div>
+</li>
+<%- end -%></ul>
+
+<div id="message"></div>

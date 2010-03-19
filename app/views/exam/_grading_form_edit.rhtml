@@ -1,0 +1,7 @@
+
+<% form_remote_for :grading, :url => { :action => 'rename_grading' } do |f| %>
+  <%= f.hidden_field :id, :value => @grade.id %>
+  <p>Name <%= f.text_field :name, :value => @grade.name %></p>
+  <%= f.submit %>
+  <%= link_to 'Hide', '', :onClick => "Element.hide('grading-form');" %>
+<% end %>

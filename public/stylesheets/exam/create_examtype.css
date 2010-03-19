@@ -1,0 +1,36 @@
+
+#form-content {
+    width:700px;
+    height:100px;
+    padding-left:80px;
+}
+.submit-area {
+    clear:both;
+    height:80px;
+    margin-left:200px;
+    padding-top:30px;
+}
+#examtypes-list ul {
+    padding : 0;
+    width : 500px;
+}
+#examtypes-list ul li {
+    background : #fff url(../../images/_global/list-bg-repeat.jpg) repeat;
+    height : 1.5em;
+    list-style-type : none;
+    padding : 0.5em 0 0 40px;
+}
+#examtypes-list ul li .examtype-name,
+#examtypes-list ul li .examtype-edit-link,
+#examtypes-list ul li .examtype-delete-link {
+    float : left;
+    margin : 0 10px 0 0;
+}
+#examtypes-list ul li .examtype-name {
+    width : 350px;
+}
+#examtypes-list ul li .examtype-edit-link a,
+#examtypes-list ul li .examtype-delete-link a {
+    color : #000;
+    text-decoration : none;
+}

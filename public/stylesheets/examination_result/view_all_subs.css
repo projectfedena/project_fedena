@@ -1,0 +1,49 @@
+
+.text-input-bg {
+    float : left;
+    margin : 0 0 0 40px;
+}
+#submit_view {
+    margin : 40px 0 0 100px;
+}
+#submit_pdf {
+    margin : 40px 0 0 0;
+}
+#submit_view, #submit_pdf {
+    width : 150px;
+    padding : 5px 0 0 30px;
+    height : 50px;
+    float : left;
+}
+#res_table {
+    margin:0 auto;
+    margin-top:50px;
+    padding-top:50px;
+}
+.res_tr {
+    padding-left:30px;
+    clear:both;
+    height:30px;
+    background:#fff url(../../images/_global/list-bg-repeat.jpg) repeat-x;
+}
+.res_td_name {
+    float:left;
+    width:180px;
+    padding-top:5px;
+}
+.res_td_name a {
+    text-decoration:none;
+    color:#000;
+}
+.res_td {
+    float:left;
+width:80px;
+    padding-top:5px;
+}
+#result-info {
+    background-color : #fff1ab;
+    text-align : center;
+    margin : 10px 0 20px 0;
+    font-weight:bold;
+}
+

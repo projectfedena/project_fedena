@@ -1,0 +1,5 @@
+RECIPIENTS:<br/>
+
+<% @recipients.each do |r|  %>
+    <%= r.first_name %> <%= link_to "X", "#", :onClick => "remove_recipient(#{r.id})"%> <br/>
+<% end %>

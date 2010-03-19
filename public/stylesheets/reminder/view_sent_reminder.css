@@ -1,0 +1,28 @@
+#reminder-body{
+    margin:0 0 0 50px;
+}
+
+#reminder-from{
+    margin:0 0 15px 0;
+    font-size:27px;
+    font-weight:bold;
+}
+
+#reminder-date{
+    margin:0 0 25px 0;
+    color:#c9c9c9;
+    font-weight:bold;
+}
+
+#reminder-subject{
+    margin:0 0 20px 0;
+    font-weight:bold;
+    color:#9e0f15;
+    font-size:18px;
+}
+
+#reminder-message{
+    background:#eeeeee;
+    padding:20px;
+    text-align:justify;
+}

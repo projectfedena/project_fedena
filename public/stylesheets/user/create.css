@@ -1,0 +1,92 @@
+
+#user_create_form {
+    height:30px;
+    margin-bottom:20px;
+    margin-top:20px;
+    padding:0;
+    background:#fff url(../../images/create_users/underline_image.jpg) bottom left no-repeat;
+}
+#user_create_form img {
+    width:22px;
+    height:27px;
+    float:left;
+    margin:0;
+    border:0;
+    padding:0px 0 0 0;
+}
+#user_create_form h4 {
+    margin:0;
+    padding:0px 0 0 40px;
+    color:#b00;
+}
+#create_user_form {
+    padding-left:50px;
+}
+#create_user_form_vertical_block_left {
+    width:290px;
+    float:left;
+    margin-top:20px;
+}
+.label_field {
+    width:285px;
+    float:left;
+}
+.label_field label {
+    font-weight:bold;
+    display:block;
+    color:#444;
+    margin-bottom:10px;
+}
+#create_user_form_vertical_block_right {
+    border-left: 2px solid #BBBBBB;
+    width:290px;
+    margin-top:20px;
+    padding-left:50px;
+    float:left;
+}
+.label_field {
+    width:285px;
+    float:left;
+}
+.label_field label {
+    font-weight:bold;
+    display:block;
+    color:#444;
+    margin-bottom:10px;
+}
+.text_field_bg {
+    width:230px;
+    height:28px;
+    background:#fff url(../../images/fedena_user/create_user/text_input.png) no-repeat;
+    margin-bottom:20px;
+}
+.select_input_bg {
+    width:230px;
+    height:28px;
+    background:#fff url(../../images/master_student/admission1/text_input.png) no-repeat;
+    margin-bottom:20px;
+}
+.label_field input {
+    width:215px;
+    height:28px;
+    background:transparent;
+    border:none;
+    padding-left:10px;
+    padding-top:5px;
+}
+.label_field select {
+    width:230px;
+    height:28px;
+}
+.user_submit_button {
+    margin-top:20px;
+    margin-left:275px;
+}
+.necessary-field {
+    color : #f00;
+    font-size : 1.1em;
+}
+#necessary-field-notification {
+    font-weight : bold;
+    padding : 10px 0 10px 0;
+}

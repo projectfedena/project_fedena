@@ -1,0 +1,12 @@
+
+#profile_view{margin-top:25px;margin-bottom:25px;}
+
+.profile_info_area1 {margin-left:50px;height:87px;width:682px;background:#fff url(../../images/master_student/profile/new_info_bg.jpg) no-repeat;}
+.profile_info_label_top {padding-top:25px;height:30px;width:120px;text-align:right;padding-right:20px;float:left;font-weight:bold;color:#548ab2;}
+.profile_info_label1    {padding-top:15px;height:25px;width:120px;text-align:right;padding-right:20px;float:left;font-weight:bold;color:#548ab2;}
+
+.profile_info_text_top {padding-top:25px;padding-left:20px;height:30px;width:500px;float:left;font-weight:bold;color:#000;}
+.profile_info_text     {padding-top:15px;padding-left:20px;height:25px;width:500px;float:left;font-weight:bold;color:#000;}
+
+.submit-buttons {margin-top:10px;margin-left:175px;}
+.submit-buttons a img {margin-left:25px}

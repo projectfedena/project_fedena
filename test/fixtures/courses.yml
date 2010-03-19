@@ -1,0 +1,120 @@
+
+c1:
+  id: 1
+  grade: 1
+  section: A
+  academic_year_id: 1
+
+c2:
+  id: 2
+  grade: 1
+  section: B
+  academic_year_id: 1
+
+c3:
+  id: 3
+  grade: 2
+  section: A
+  academic_year_id: 1
+
+c4:
+  id: 4
+  grade: 2
+  section: B
+  academic_year_id: 1
+
+c5:
+  id: 5
+  grade: 3
+  section: A
+  academic_year_id: 1
+
+c6:
+  id: 6
+  grade: 3
+  section: b
+  academic_year_id: 1
+
+c7:
+  id: 7
+  grade: 4
+  section: A
+  academic_year_id: 1
+
+c8:
+  id: 8
+  grade: 4
+  section: B
+  academic_year_id: 1
+
+c9:
+  id: 9
+  grade: 5
+  section: A
+  academic_year_id: 1
+
+c10:
+  id: 10
+  grade: 5
+  section: B
+  academic_year_id: 1
+
+c11:
+  id: 11
+  grade: 6
+  section: A
+  academic_year_id: 1
+
+c12:
+  id: 12
+  grade: 6
+  section: B
+  academic_year_id: 1
+
+c13:
+  id: 13
+  grade: 7
+  section: A
+  academic_year_id: 1
+
+c14:
+  id: 14
+  grade: 7
+  section: B
+  academic_year_id: 1
+
+c15:
+  id: 15
+  grade: 8
+  section: A
+  academic_year_id: 1
+
+c16:
+  id: 16
+  grade: 8
+  section: B
+  academic_year_id: 1
+
+c17:
+  id: 17
+  grade: 9
+  section: A
+  academic_year_id: 1
+
+c18:
+  id: 18
+  grade: 9
+  section: B
+  academic_year_id: 1
+
+c19:
+  id: 19
+  grade: 10
+  section: A
+  academic_year_id: 1
+
+c20:
+  id: 20
+  grade: 10
+  section: B
+  academic_year_id: 1

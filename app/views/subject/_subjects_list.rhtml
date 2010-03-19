@@ -1,0 +1,12 @@
+
+<ul>
+<% @subjects.each do |sub| %>
+  <li>
+    <div class="sub_name"><%= sub.name %></div>
+    <% if permitted_to? :edit,:subject %>
+    <div class="edit-link"> <%= link_to "Edit", :controller => "subject", :action => "edit", :id => sub.id %></div>
+    <div class="delete-link"> <%= link_to "Delete",{:controller=>"subject", :action => "delete", :id => sub.id},:confirm=>"Are you sure?" %></div>
+    <% end %>
+  </li>
+<% end %>
+</ul>

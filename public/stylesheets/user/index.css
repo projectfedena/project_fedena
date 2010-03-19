@@ -1,0 +1,67 @@
+#search-area {
+    width:600px;
+    height:163px;
+    margin-left:50px;
+}
+#searchbox {
+    height:163px;
+    width:391px;
+    background:#fff url(../../images/form_bg/user_search_box.jpg) no-repeat;
+    float:left;
+}
+#searchbox label {
+    width:200px;
+    color:#555;
+    font-size:20px;
+    padding:10px 0 0 35px;
+    float:left;
+}
+#searchbox input {
+    height:45px;
+    width:320px;
+    font-size:30px;
+    font-weight:bold;
+    margin:18px 0 0 32px;
+    border:none;
+    background:transparent;
+    padding:5px 0 0 5px;
+}
+#option-links {
+    float:right;
+    width:150px;
+    margin-left:10px;
+    padding-top:20px;
+}
+#option-links a {
+    display:block;
+    height:20px;
+    font-weight:bold;
+    color:#000;
+}
+#user_information {
+    height:200px;
+    width:408px;
+    margin-top:30px;
+    margin-left:50px;
+}
+#user_no_result {
+    font-weight:bold;
+    color:#b00;
+}
+#user_ajax_result {
+    padding:10px 0 10px 0;
+    text-decoration:none;
+    width:204px;
+    float:left;
+    background:#fff url(../../images/student_details/ajax_result_underline.jpg) bottom left no-repeat;
+}
+#user_ajax_result a {
+    color:#000;
+    font-weight:bold;
+}
+#flash_notice_manage_users {
+    color:red;
+    background-color:#eee;
+    clear:both;
+}
+  

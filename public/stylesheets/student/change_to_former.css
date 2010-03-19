@@ -1,0 +1,36 @@
+#student-details {
+    background-color : #fff1ab;
+    height : 30px;
+    padding : 10px 0 0 50px;
+}
+#student-details h3 {
+    display : inline;
+    float : left;
+    margin : 0 0 20px 0;
+    width : 300px;
+}
+#student-details h4 {
+    display : inline;
+    float : left;
+    margin : 0 0 10px 0;
+    width : 200px;
+}
+#remove-student {
+    float : left;
+    padding : 40px 0 0 30px;
+    width : 345px;
+}
+#remove-student p {
+    font-size : 95%;
+    text-align : justify;
+    width : 300px;
+    margin : 5px 0 15px 0;
+}
+#remove-student h4 {
+    color : #b00;
+    margin : 0;
+    padding : 0;
+}
+.submit-button {
+    float : left;
+}

@@ -1,0 +1,65 @@
+<div id="content-header">
+  <img src="/images/student_details/student_details_logo.jpg" />
+  <h1>Detailed Report</h1>
+  <h3>Student Attendance Report</h3>
+  <div id="app-back-button">
+     <%= link_to image_tag("/images/buttons/back.png", :border => 0), :back %>
+  </div>
+</div>
+
+<div id="page-yield">
+
+  <% unless flash[:notice].nil? %> <p class="flash-msg"> <%= flash[:notice] %> </p> <% end %>
+
+  <% if @student_attendance_type == "Daily" %>
+
+    <div id="info">
+      <div class="info-label-top">Name &nbsp;&nbsp;&nbsp;&nbsp; :</div>
+      <div class="info-text-top"><%= @student.first_name + " " + @student.last_name %></div>
+
+      <div class="info-label-top">Class &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:</div>
+      <div class="info-text-top"><%= @student.course.grade + "-" + @student.course.section %></div>
+    </div>
+
+    <div id="dates-list">
+      <ul>
+        <%- if @student_attendance.empty? -%>
+          <li class="heading"> Student was present on all days. </li>
+        <%- else -%>
+          <li class="heading"> Absent on the following days : </li>
+        <%- end -%>
+        <% @student_attendance.each do |s| %>
+          <li><%= s.attendance_date.strftime("%d %b, %Y") %></li>
+        <% end %>
+      </ul>
+    </div>
+
+  <% else %>
+
+    <div id="info">
+      <div class="info_label_top">Name</div>
+      <div class="info_text_top"><%= @student.first_name + " " + @student.last_name %></div>
+
+      <div class="info_label1">Class</div>
+      <div class="info_text"> <%= @student.course.grade + "-" + @student.course.section %></div>
+
+      <div class="info_label1">Subject</div>
+      <div class="info_text"> <%= @subject.name %></div>
+    </div>
+
+    <div id="dates-list">
+      <ul>
+        <%- if @student_attendance.nil? -%>
+          <li class="heading"> Student was present on all days. </li>
+        <%- else -%>
+          <li class="heading"> Absent on the following days : </li>
+        <%- end -%>
+        <% @student_attendance.each do |s| %>
+          <li><%= s.attendance_date.strftime("%d %b, %Y") %></li>
+        <% end %>
+      </ul>
+    </div>
+
+  <% end %>
+
+</div>

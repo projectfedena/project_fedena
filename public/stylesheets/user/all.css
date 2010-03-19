@@ -1,0 +1,21 @@
+
+#users {
+    height : 300px;
+    padding : 80px 0 0 40px;
+    width : 725px;
+}
+.users {
+    background : #fff url(../../images/student_details/ajax_result_underline.jpg) bottom left no-repeat;
+    float : left;
+    padding : 10px 10px 10px 0;
+    text-decoration : none;
+    width : 230px;
+}
+.users a {
+    color : #000;
+    font-weight : bold;
+    text-decoration : none;
+}
+.users a:hover {
+    text-decoration : underline;
+}

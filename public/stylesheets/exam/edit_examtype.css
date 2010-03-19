@@ -1,0 +1,29 @@
+
+#page-yield {
+    margin-top:50px;
+}
+#form-content {
+    width:700px;
+    height:100px;
+    padding-left:80px;
+}
+.label-check-pair {
+    width:285px;
+    float:left;
+    padding-left:10px;
+    padding-top:30px;
+    height:50px;
+}
+.label-check-pair label {
+    font-weight:bold;
+    display:block;
+    color:#444;
+    margin-bottom:10px;
+    display:inline;
+}
+.submit-area {
+    clear:both;
+    height:80px;
+    margin-left:200px;
+    padding-top:30px;
+}

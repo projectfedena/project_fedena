@@ -1,0 +1,76 @@
+
+#news_area {
+    margin-top:50px;
+}
+#news_title {
+    font-size: 30px;
+    font-weight: bold;
+}
+#create_date {
+    color: #b00;
+    font-size: 90%;
+    padding-top: 5px;
+}
+#news_content {
+    margin-top:25px;
+    padding: 20px 50px;
+    background-color:#eee;
+    text-align:justify;
+    line-height:1.5em;
+}
+#edit_delete_button {
+    padding-top:35px;
+    padding-left:200px;
+}
+#edit_delete_button a img{
+    margin-left:25px;
+}
+#comments-heading {
+    border-bottom: 2px solid gray;
+    padding: 0 0 10px 0;
+}
+#leave-a-comment {
+    margin: 50px 0 0 0;
+}
+#comment_content {
+    border: 2px solid #A0A7B1;
+    height: 100px;
+    width: 600px;
+}
+#comments-list {
+    padding: 0 0 20px 0;
+}
+#comments-list li {
+    border-bottom: 1px solid #aaa;
+    list-style-type: none;
+    margin: 20px 0 0 0;
+    padding: 10px 0 10px 0;
+}
+#comments-list li .comment-details {
+    color: #888;
+    font-size: 80%;
+    height: 15px;
+    margin: 0 0 10px 0;
+}
+.comment-details .commenter {
+    float: left;
+    width: 200px;
+}
+.comment-details .comment-posted-at {
+    float: right;
+}
+.comment-details .delete-comment {
+    float: right;
+    margin: 0 0 0 20px;
+}
+.comment-content {
+    margin: 0 0 0 50px;
+    width: 600px;
+}
+#submit-button {
+    margin: 20px 0 0 0;
+}
+
+
+
+

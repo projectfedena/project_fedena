@@ -1,0 +1,6 @@
+
+
+<%= select :select_course, :course, @courses.map { |s| [s.name, s.id] },
+{:prompt => "Select course"},
+{:onChange => "#{remote_function(:url => {:action => "to_students"}, :with => "'course_id='+value")}"} %>
+

@@ -1,0 +1,27 @@
+
+<% unless @students.size == 0 %>
+
+  <% form_for :migrate_students, :url => {:action => :migrate_students} do |f| %>
+
+    <% @students.each do |s| %>
+      <div class="student-names">
+        <div class="check"> <%= check_box_tag "migrate_students[id][]", s.id, :checked => "checked" %> </div>
+        <div class="student-name">
+          <%= s.first_name %>
+          <%= s.last_name %>
+        </div>
+      </div>
+    <% end %>
+
+    <div id="new-class-selectbox">
+      <label for="migrate_students_new_course">New class for the students</label>
+      <%= select :migrate_students, :new_course,
+        @new_courses \
+        unless @students.size == 0 %>
+    </div>
+
+    <div id="submit-button"> <%= image_submit_tag "/images/buttons/update.png" %> </div>
+
+  <% end %>
+
+<% end %>

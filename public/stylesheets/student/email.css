@@ -1,0 +1,46 @@
+
+#student-details {
+    background-color : #fff1ab;
+    clear : both;
+    height : 30px;
+    margin : 0 0 40px 0;
+    padding : 10px 0 0 50px;
+}
+#student-details h3 {
+    display : inline;
+    float : left;
+    margin : 0 0 20px 0;
+    width : 300px;
+}
+#student-details h4 {
+    display : inline;
+    float : left;
+    margin : 0 0 10px 0;
+    width : 200px;
+}
+.label-field-pair {
+    margin-left : 50px;
+}
+.message-area {
+    margin-left : 50px;
+    clear : both;
+}
+.message-area label {
+    clear : both;
+    color : #444;
+    display : block;
+    font-weight : bold;
+    margin : 0 0 10px 0;
+}
+#email_message {
+    background : transparent url(../../images/_input_bg/mail-message.png) no-repeat;
+    border : 0;
+    font-family : Arial;
+    height : 190px;
+    padding : 5px;
+    width : 520px;
+}
+.submit-area {
+    clear : both;
+    margin : 20px 0 0 250px;
+}

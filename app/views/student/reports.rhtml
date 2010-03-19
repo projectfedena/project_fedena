@@ -1,0 +1,76 @@
+<div id="content-header">
+  <img src="/images/admission/admission_page_logo.jpg" />
+  <h1>Students</h1>
+  <h3>Reports center</h3>
+  <div id="app-back-button">
+    <%= link_to image_tag("/images/buttons/back.png", :border => 0), :back %>
+  </div>
+</div>
+
+<div id="page-yield">
+
+  <div id="exam-results-dashboard">
+
+    <h3>Academics</h3>
+
+    <div class="exam-results-reports-col">
+    <% if permitted_to? :exam_report, :student %>
+      <h4>Recent exams</h4>
+      <ul>
+        <% @examtypes.each do |e| %>
+          <li><%= link_to e.name, { :controller => 'student', :action => 'exam_report', :student => @student, :exam => e, :course => @student.course_id } %></li>
+        <% end %>
+      </ul>
+    <%end%>
+
+      <h4>Subjectwise results</h4>
+      <ul>
+        <% @subjects.each do |s| %>
+          <li><%= link_to s.name, { :controller => 'student', :action => 'subject_wise_report', :student => @student, :subject => s } %></li>
+        <% end %>
+      </ul>
+    </div>
+    
+    <div class="exam-results-reports-col">
+
+      <h4>Detailed reports</h4>
+      <ul>
+        <li><%= link_to 'Current year reports', { :controller => 'student', :action => 'academic_report', :id => @student.id } %></li>
+        <li><%= link_to 'Compare with past years', { :controller => 'student', :action => 'previous_years_marks_overview', :student => @student.id } %></li>
+      </ul>
+
+      <% unless @old_courses.empty? %>
+        <h4>Archives</h4>
+        <ul>
+          <% @old_courses.each do |c| %>
+            <li><%= link_to c.name, { :controller => 'student', :action => 'academic_report', :id => @student.id, :year => c.id } %></li>
+          <% end %>
+        </ul>
+      <% end %>
+
+
+    </div>
+
+    <div class="extender"> </div>
+
+  </div>
+
+  <div id="attendance-reports-dashboard">
+
+    <h3>Attendance</h3>
+
+    <h4>Detailed Reports</h4>
+
+    <ul>
+      <li><%= link_to 'Current year reports', :controller => 'attendance', :action => 'student_report', :id => @student %></li>
+    </ul>
+
+    <h4>Archives</h4>
+
+    <ul><% @old_courses.each do |c| %>
+      <li><%= link_to c.name, :controller => 'attendance', :action => 'student_report', :id => @student, :year => c.academic_year_id %></li>
+    <% end %></ul>
+
+  </div>
+
+</div>

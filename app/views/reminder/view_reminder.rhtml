@@ -1,0 +1,59 @@
+<div id="content-header">
+  <img src="/images/examination/index/page_logo.jpg" alt="" />
+  <h1>Reminder</h1>
+  <h3>&nbsp;</h3>
+  <div id="app-back-button">
+    <%= link_to image_tag("/images/buttons/back.png", :border => 0), :back%>
+  </div>
+</div>
+
+<div id="inner-tab-menu">
+  <ul>
+    <li><%= link_to "Mark as unread" ,:controller=> "reminder", :action=>"mark_unread", :id2=>@new_reminder.id%></li>
+    <li><%= link_to "Delete", {:controller=>"reminder", :action=>"delete_reminder_by_recipient", :id2=>@new_reminder.id}, :confirm=>"Are you sure?" %></li>
+  </ul>
+</div>
+
+<div id="page-yield">
+
+  <% unless flash[:notice].nil? %>
+    <p class="flash-msg"> <%= flash[:notice] %> </p>
+  <% end %>
+
+  <div id="reminder-body">
+    <div id="reminder-from">From <%= @sender.first_name   %></div>
+
+    <div id="reminder-date">Sent on <%= @new_reminder.created_at.strftime("%A, %d %B, %Y") %></div>
+
+    <div id="reminder-subject">Subject : <%= @new_reminder.subject %></div>
+
+
+
+    <div id="reminder-message"><%= @new_reminder.body %></div>
+    <div id="reminder-reply">
+
+      <%= link_to_function "Reply" do |page|
+        page.visual_effect :toggle_blind, "reply-form"
+      end %>
+      
+    </div>
+    <div id="reply-form" style="display:none;">
+      <% form_for :reminder, :url=>{:id2 =>@new_reminder.id}  do |l| %>
+        <%= error_messages_for :reminder %>
+        <div class="message">
+          <div class="label-field-message">
+            <label for="subject">Subject</label>
+            <div class="text-input-bg1"><%= l.text_field :subject %></div>
+          </div>
+          <div class="label-field-message">
+            <label for="start_date">Message</label>
+            <div class="text-input-bg1"><%= l.text_area :body, :cols=>25, :rows=>10 %></div>
+          </div>
+        </div>
+        <div id="submit-button">
+          <%=submit_tag "Send" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

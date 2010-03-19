@@ -1,0 +1,18 @@
+<div id="content-header">
+  <img src="/images/examination/index/page_logo.jpg" alt="" />
+  <h1>Class Manager</h1>
+  <h3>Class : <%= @course.name %></h3>
+  <div id="app-back-button">
+    <%= link_to image_tag("/images/buttons/back.png", :border => 0), :back %>
+  </div>
+</div>
+
+<div id="page-yield">
+  <ol>
+    <% @students.each do |s| %>
+      <li><%= s.full_name %></li>
+    <% end %>
+  </ol>
+
+  <%= link_to 'Email the class', :action => 'email', :id => @course.id %>
+</div>

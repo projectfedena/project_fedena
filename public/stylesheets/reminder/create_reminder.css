@@ -1,0 +1,14 @@
+.create-options{
+
+}
+
+.to-options{
+    float:left;
+    text-align:center;
+    width:385px;
+}
+
+.to-options a{
+    color:#9D0E00;
+    font-weight:bold;
+}

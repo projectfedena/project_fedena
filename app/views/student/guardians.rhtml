@@ -1,0 +1,121 @@
+<div id="content-header">
+  <img src="/images/admission/admission_page_logo.jpg" />
+  <h1>Parents info</h1>
+  <h3>Parents profile</h3>
+  <div id="app-back-button">
+    <%= link_to image_tag("/images/buttons/back.png", :border => 0), :back %>
+  </div>
+</div>
+
+<div id="inner-tab-menu">
+  <ul>
+    <% if @current_user.admin? %>
+      <li><%= link_to "Add guardian", :controller => "student",
+        :action => "add_guardian", :id => @student.id %></li>
+    <% end %>
+  </ul>
+</div>
+
+<div id="page-yield">
+
+  <% unless flash[:notice].nil? %> <p class="flash-msg"> <%= flash[:notice] %> </p> <% end %>
+
+  <div id="student_profile_heading">
+
+    <div id="profile_picture_display">
+      <img src="<%= url_for(:controller=>"student", :action => "show", :id => @student.admission_no) %>"  />
+    </div>
+
+    <div id="student_main_info">
+      <h3> <%= @student.first_name %> <%= @student.middle_name %> <%= @student.last_name %>  </h3>
+      <% unless @student.course_id == nil %>
+        <h4> Class & Section : <%= @student.course.grade %> <%= @student.course.section %> </h4>
+      <% else %>
+        <h4>(Former student)</h4>
+      <% end %>
+      <h4> Adm no. : <%= @student.admission_no %> </h4>
+    </div>
+
+    <div class="extender"> </div>
+
+  </div>
+
+  <div id="guardians-links">
+    <ul>
+      <% @parents.each do |p| %>
+        <li><a href="#guardian-details-id-<%= p.id %>"><%= p.name %></a> (<%= p.relation %>)</li>
+      <% end %>
+    </ul>
+  </div>
+
+
+  <div id="parent-list">
+
+    <% @parents.each do |p| %>
+
+      <a name="guardian-details-id-<%= p.id %>"> </a>
+
+      <div id="new_profile_info_top">
+        <div class="profile_info_label_top"> Name </div>
+        <div class="profile_info_text_top">
+          <%= p.name %>
+        </div>
+
+        <div class="profile_info_label1">Relation</div>
+        <div class="profile_info_text"><%= p.relation %></div>
+
+        <div class="profile_info_label1">Date of birth</div>
+        <div class="profile_info_text"> <%= p.dob.strftime('%d %B, %Y') unless p.dob.nil? %> </div>
+      </div>
+
+      <div class="new_profile_info_area1">
+        <div class="profile_info_label1">Email</div>
+        <div class="profile_info_text"> <%= p.email %> </div>
+
+        <div class="profile_info_label1">Office Phone 1</div>
+        <div class="profile_info_text"> <%= p.office_phone1 %> </div>
+      </div>
+
+      <div class="new_profile_info_area1">
+        <div class="profile_info_label1">Office Phone 1</div>
+        <div class="profile_info_text"> <%= p.office_phone2 %> </div>
+
+        <div class="profile_info_label1">Mobile phone</div>
+        <div class="profile_info_text"> <%= p.mob_phone %> </div>
+      </div>
+
+      <div class="new_profile_info_area1">
+        <div class="profile_info_label1">Office Address</div>
+        <div class="profile_info_text"> <%= p.office_address.to_s.gsub("\n", ", ") %> </div>
+
+        <div class="profile_info_label1"> </div>
+        <div class="profile_info_text"> <%= p.city %> <%= p.state %> <%= p.country.name %> </div>
+      </div>
+
+      <div class="new_profile_info_area1">
+        <div class="profile_info_label1">Income</div>
+        <div class="profile_info_text"> <%= p.income %> </div>
+
+        <div class="profile_info_label1">Occupation</div>
+        <div class="profile_info_text"> <%= p.occupation %> </div>
+      </div>
+      <% if permitted_to? :edit_guardian,:student %>
+      <div class="parent-edit-button">
+        <%= link_to image_tag('/images/buttons/edit.png', :border => 0),
+          :controller => 'student', :action => 'edit_guardian', :id => p.id %>
+      </div>
+      <%  end %>
+      <% if permitted_to? :del_guardian,:student %>
+      <%  if @student.guardians.size > 1 %>
+        <div class="parent-del-button">
+        <%= link_to image_tag('/images/buttons/delete.png', :border => 0),
+          {:controller => 'student', :action => 'del_guardian', :id => p.id },
+          {:confirm => 'Are you completely sure?'} %>
+        </div>
+      <%  end %>
+      <% end %>
+
+    <% end %>
+
+  </div>
+</div>

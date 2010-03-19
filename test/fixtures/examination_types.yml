@@ -1,0 +1,30 @@
+
+e1:
+  id: 1
+  name: Assignment No. 1
+  primary: false
+
+e2:
+  id: 2
+  name: Class Test No. 1
+  primary: false
+
+e3:
+  id: 3
+  name: Assignment No. 2
+  primary: false
+
+e4:
+  id: 4
+  name: Class Test No. 2
+  primary: false
+
+e5:
+  id: 5
+  name: Half Yearly Examination
+  primary: false
+
+e6:
+  id: 6
+  name: Annual Examination
+  primary: true

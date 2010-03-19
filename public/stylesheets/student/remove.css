@@ -1,0 +1,33 @@
+
+#student-details {
+    background-color : #fff1ab;
+    height : 30px;
+    padding : 10px 0 0 50px;
+}
+#student-details h3 {
+    display : inline;
+    float : left;
+    margin : 0 0 20px 0;
+    width : 300px;
+}
+#student-details h4 {
+    display : inline;
+    float : left;
+    margin : 0 0 10px 0;
+    width : 200px;
+}
+.link-box {
+    margin: 40px 40px;
+    width: 300px;
+    float:left;
+    height:80px;
+}
+.link-heading a {
+    font-weight:bold;
+    color:#900;
+}
+.link-descr {
+    margin-top:5px;
+    color:#666;
+    text-align:justify;
+}

@@ -1,0 +1,111 @@
+
+#page-yield {
+    margin-top:50px;
+}
+#form-content {
+    width:760px;
+    padding-left:0px;
+}
+#go-button {
+    float : left;
+    margin : 30px 0 50px 300px;
+}
+.label-field-pair {
+    width:285px;
+    float:left;
+    padding-left:10px;
+    height:50px;
+}
+.label-check-pair {
+    width:285px;
+    float:left;
+    padding-left:10px;
+    padding-top:30px;
+    height:50px;
+}
+.label-field-pair label {
+    font-weight:bold;
+    display:block;
+    color:#444;
+    margin-bottom:10px;
+}
+.label-check-pair label {
+    font-weight:bold;
+    display:block;
+    color:#444;
+    margin-bottom:10px;
+    display:inline;
+}
+.text-input-bg {
+    width:230px;
+    height:28px;
+    background:#fff url(../../images/master_student/admission1/text_input.png) no-repeat;
+    margin-bottom:20px;
+}
+.select-input-bg {
+    width:230px;
+    height:28px;
+    background:#fff url(../../images/master_student/admission1/text_input.png) no-repeat;
+    margin-bottom:20px;
+}
+.label-field-pair input {
+    width:210px;
+    height:28px;
+    background:transparent;
+    border:none;
+    padding-left:10px;
+    padding-top:5px;
+}
+.label-field-pair select {
+    color:#000;
+    width:230px;
+    height:28px;
+}
+#student-list {
+    width:500px;
+    margin:0 auto;
+    margin-top:50px;
+}
+#exam_result{
+	width: 500px;
+	margin:0 auto;
+	margin-top:50px;
+}
+.st-marks-block {
+    height:35px;
+}
+.st-name {
+    height:27px;
+    width:250px;
+    float:left;
+    padding-top:8px;
+    padding-left:50px;
+    background:#fff url(../../images/examination_result/add/list-bg.jpg) no-repeat;
+}
+.marks-input {
+    height:30px;
+    width:45px;
+    float:left;
+    background:#fff url(../../images/_input_bg/text-tiny.png) no-repeat;
+    margin-left:10px;
+    margin-top:3px;
+}
+.marks-input input {
+    width:25px;
+    border:none;
+    background:transparent;
+    padding:6px 0 0 8px;
+}
+
+	
+
+#submit-area {
+    clear:both;
+    height:80px;
+    margin-left:100px;
+    margin-top:50px;
+}
+.text-input-bg {
+    float : left;
+    margin-right : 20px;
+}

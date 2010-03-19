@@ -1,0 +1,121 @@
+
+.select-form {
+    width : 750px;
+    height : 100px;
+}
+.text-input-bg {
+    float : left;
+    margin : 0 20px 0 0;
+}
+ .btn {
+    float:left;
+    margin : 40px 0 0 125px;
+    padding : 10px 0 0 0;
+}
+#exam_result{
+	padding-top:10px;
+	width: 500px;
+	margin:0 auto;
+	margin-top:50px;
+}
+.st-marks-block {
+    width:350px;
+}
+.st-marks-block .st-name {
+    height:27px;
+    width:250px;
+    float:left;
+    padding-top:8px;
+    padding-left:50px;
+    background:#fff url(../../images/examination_result/add/list-bg.jpg) no-repeat;
+}
+.marks {
+	margin-left:5px;
+	margin-top:3px;
+	padding-top:4px;
+	float:left;
+    height:30px;
+    width:45px;
+    background:#fff url(../../images/_input_bg/text-tiny.png) no-repeat;
+	text-align:center;
+}
+
+#exam_results {
+    margin:80px 0 50px 50px;
+}
+#exam_details {
+    width:535px;
+    height:50px;text-align:center;}
+#res_tbl a {
+    text-decoration:none;
+    color:#000;
+}
+.res_tr {
+    padding-left:50px;
+    width:600px;
+    height:30px;
+    clear:both;
+    background:#fff url(../../images/examination_result/view_exam_subject/list_bg.jpg) no-repeat;
+}
+.res_td_name {
+    padding-top:5px;
+    width:300px;
+    float:left;
+}
+.res_td {
+    padding-top:5px;
+    width:100px;
+    float:left;
+}
+
+.result-info {
+ width:535px;
+background-color:#FFF1AB;
+font-weight:bold;
+
+margin-bottom:20px;
+text-align:center;
+}
+
+div.autocomplete {
+  position:absolute;
+  width:400px;
+  background-color:white;
+  border:1px solid #ccc;
+  margin:0px;
+  padding:0px;
+  font-size:0.8em;
+  text-align:left;
+  max-height:200px;
+  overflow:auto;
+}
+div.autocomplete ul {
+  list-style-type:none;
+  margin:0px;
+  padding:0px;
+}
+div.autocomplete ul li.selected {
+  background-color: #EAF2FB;
+}
+div.autocomplete ul li {
+  list-style-type:none;
+  display:block;
+  margin:0;
+  padding:2px;
+  cursor:pointer;
+}
+
+.combo /* look&fell of scriptaculous select box*/
+{
+  margin: 0px 5px 10px 0px;
+  font-family:Verdana, Geneva, Arial, Helvetica, sans-serif;
+  font-size:0.8em;
+  width : 10em;
+  display : block;
+  text-align:left;
+  background: url('../images/bg_select.jpg') right;
+  height:18px;
+  cursor: pointer;
+  border:1px solid #ccc;
+  color:#999;
+}

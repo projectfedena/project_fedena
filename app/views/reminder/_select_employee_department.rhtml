@@ -1,0 +1,6 @@
+
+
+<%= select :select_department, :department, @departments.map { |s| [s.name, s.id] },
+{:prompt => "Select department"},
+{:onChange => "#{remote_function(:url => {:action => "to_employees"}, :with => "'dept_id='+value")}"} %>
+

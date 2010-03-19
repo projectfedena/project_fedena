@@ -1,0 +1,56 @@
+<div id="content-header">
+  <img src="/images/show_news/show_news_logo.png" />
+  <h1>News</h1>
+  <h3>Read news</h3>
+  <div id="app-back-button">
+    <%= link_to image_tag("/images/buttons/back.png", :border => 0), :back %>
+  </div>
+</div>
+
+<div id="page-yield">
+
+  <% unless flash[:notice].nil? %> <p class="flash-msg"> <%= flash[:notice] %> </p> <% end %>
+
+    <div id="news_title">
+      <%= @news.title %>
+    </div>
+    <div id="create_date">
+      Posted on <%= @news.created_at.strftime("%A, %d %B, %Y") %>
+    </div>
+    <div id="news_content">
+      <%= @news.content %>
+    </div>
+
+  <% if @current_user.admin? %>
+    <div id="edit_delete_button">
+      <%= link_to image_tag("/images/show_news/edit_news_button.png", :border=>0),
+        :controller => "news", :action => "edit", :id => @news.id %>
+        
+      <%= link_to image_tag("/images/show_news/delete_news_button.jpg", :border=>0), 
+        { :controller => "news", :action => "delete", :id => @news.id },
+        :confirm => 'Are you sure you want to delete this news item?' %>
+     
+    </div>
+  <% end %>
+
+  <h3 id="comments-heading">Comments</h3>
+
+  <ul id="comments-list">
+    <% if @comments.empty? %>
+      <%= "No comments yet." %>
+    <% end %>
+
+    <% @comments.each do |@cmnt| %>
+      <%= render :partial => "comment" %>
+    <% end %>
+  </ul>
+
+  <h4 id="leave-a-comment">Leave a comment</h4>
+
+  <% form_remote_for :comment, :id => 'comments-form', :url => { :action => 'add_comment' } do |f| %>
+    <%= f.text_area :content %>
+    <%= f.hidden_field :news_id, :value => @news.id %>
+    <div id="submit-button"><%= image_submit_tag '/images/buttons/submit.png' %></div>
+  <% end %>
+
+</div>

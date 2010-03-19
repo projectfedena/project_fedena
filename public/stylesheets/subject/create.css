@@ -1,0 +1,11 @@
+
+#form-content {
+    height : 230px;
+    margin : 0 0 0 50px;
+    width : 550px;
+}
+#submit_area {
+    clear:both;
+    height:30px;
+    margin : 20px 0 0 200px;
+}

@@ -1,0 +1,74 @@
+
+.label-field-pair {
+    height : 80px; width:250px;
+    float:left;
+    margin : 0 0 0 20px;
+}
+.text-input-bg {
+    background:#fff url(../../images/_input_bg/text-input.png) no-repeat;
+    height : 30px; width : auto;
+}
+.label-field-pair label {
+    color : #444444;
+    font-weight : bold;
+    margin : 0 0 10px 5px;;
+}
+.text-input-bg input {
+    border : none;
+    background : transparent;
+    height : auto; width:215px;
+    margin : 5px 0 0 10px;
+}
+.submit-area {
+    float : left;
+    margin : 22px 0 0 40px;
+}
+.fieldWithErrors{
+    border : 2px solid #b00;
+    height : 25px; width : 225px;
+}
+.errorExplanation {
+    background-color : #ffb1b1;
+    border : 1px solid #b00;
+    height : auto; width : 510px;
+    margin : 20px 0 40px 50px;
+    padding : 10px 0 20px 20px;
+}
+.errorExplanation h2 {
+    margin : 0;
+    font-size : 1em;
+    font-weight : normal;
+    padding : 0;
+}
+.errorExplanation p {
+    margin : 5px 0 0 0;
+}
+#course-list {
+    clear : both;
+    padding : 10px 0 40px 40px;
+}
+#course-list li {
+    background : #fff url(../../images/_global/list-bg-repeat.jpg) repeat;
+    color : #444;
+    height : 1.5em; width : 30em;
+    list-style-type : none;
+    padding : 0.5em 0 0 5em;
+}
+#course-list li.heading {
+    background : none;
+    font-weight : bold;
+}
+#course-list li div {
+    float : left;
+}
+#course-list li div.course-name {
+    width : 350px;
+}
+#course-list li div.course-edit,
+#course-list li div.course-delete {
+    font-size : 0.9em;
+    width : 50px;
+}
+#course-list li div a {
+    color : #000;
+}

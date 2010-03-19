@@ -1,0 +1,23 @@
+development:
+      host: localhost
+      adapter: mysql
+      database: fedena_development
+      port: 3306
+      username: username
+      password: pass
+
+test:
+      host: localhost
+      adapter: mysql
+      database: fedena_test
+      port: 3306
+      username: username
+      password: pass
+
+production:
+      host: localhost
+      adapter: mysql
+      database: fedenac_production
+      port: 3306
+      username: username
+      password: pass

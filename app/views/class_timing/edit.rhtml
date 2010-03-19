@@ -1,0 +1,75 @@
+<div id="content-header">
+  <img src="/images/show_news/show_news_logo.png" />
+  <h1>Timetable</h1>
+  <h3>Edit timetable</h3>
+  <div id="app-back-button">
+     <%= link_to image_tag("/images/buttons/back.png", :border => 0), :back %>
+  </div>
+</div>
+
+<div id="page-yield">
+
+  <% unless flash[:notice].nil? %>
+    <p class="flash-msg"> <%= flash[:notice] %> </p>
+  <% end %>
+
+  <div id="form-content">
+
+    <%= error_messages_for 'period_timing' %>
+
+    <% form_for :class_timing do |f| %>
+
+      <div class="label-field-pair">
+        <label for="period_timing_name">Name</label>
+        <div class="text-input-bg"><%= f.text_field :name, :value => @period_timing.name %></div>
+      </div>
+
+      <div class="label-checkbox-pair">
+        <%= f.check_box :break, :checked => @period_timing.break %> Check if this is a break
+      </div>
+
+      <div class="label-field-pair">
+        <label for="period_timing_start_time">Start time</label>
+        <%= time_select :class_timing, :start_time, {:minute_step => 5}, :value => @period_timing.start_time %>
+      </div>
+
+      <div class="label-field-pair">
+        <label for="period_timing_end_time">End time</label>
+        <%= time_select :class_timing, :end_time, {:minute_step => 5}, :value => @period_timing.start_time %>
+      </div>
+
+      <div class="submit-button">
+        <%= image_submit_tag "/images/buttons/update.png" %>
+      </div>
+
+    <% end %>
+
+    <div class="extender"></div>
+
+  </div>
+
+  <div id="class-timing-list">
+    <div class="class-timing-th">
+      <div class="class-timing-td1"><b>Name</b></div>
+      <div class="class-timing-td2"><b>Start Time</b></div>
+      <div class="class-timing-td3"><b>End Time</b></div>
+      <div class="class-timing-td4"> </div>
+    </div>
+
+    <% @information.each do |x| %>
+
+    <div class="class-timing-tr">
+      <div class="class-timing-td1"> <%= x.name %> </div>
+      <div class="class-timing-td2"> <%= x.start_time.strftime("%I:%M %p") unless x.start_time.nil? %> &nbsp; </div>
+      <div class="class-timing-td3"> <%= x.end_time.strftime("%I:%M %p") unless x.end_time.nil? %> &nbsp; </div>
+      <div class="class-timing-td4">
+        <%= link_to "Edit", :controller => "class_timing", :action => "edit", :id => x.id %> &nbsp;
+        <%= link_to "Delete", :controller => "class_timing", :action => "delete", :id => x.id %> &nbsp;
+      </div>
+    </div>
+
+    <% end %>
+
+  </div>
+
+</div>

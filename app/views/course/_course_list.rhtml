@@ -1,0 +1,14 @@
+<ul id="course-list">
+<%- if @courses.empty? %>
+  <li class="heading"><b>No courses in database</b></li>
+<%- else -%>
+  <li class="heading"> Course name </li>
+<%- end -%>
+<%- @courses.each do |c| -%>
+  <li>
+    <div class="course-name"><%= c.grade -%> - <%= c.section -%></div>
+    <div class="course-edit"> <%= link_to "Edit", :action => "edit", :id => c.id %> </div>
+    <div class="course-delete"> <%= link_to "Delete",{:controller=>"course", :action => "delete", :id => c.id},:confirm=>"Are you sure?" %> </div>
+  </li>
+<%- end -%>
+</ul>

@@ -1,0 +1,16 @@
+
+<p>New classes</p>
+
+<ul>
+  <% @new_courses.each do |c| %>
+    <li> <%= c.grade %> - <%= c.section %> </li>
+  <% end %>
+</ul>
+
+<div id="add-class-link">
+  <%= link_to_remote "Add new class",
+    :update => "course-form",
+    :url => {:action => "add_course"} %>
+</div>
+
+<div id="course-form"> </div>

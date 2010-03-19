@@ -1,0 +1,77 @@
+
+.label-field-pair {
+    margin : 0 0 0 250px;
+}
+.submit-button {
+    float : left;
+    height : 60px; width: 285px;
+    margin : 0 0 0 30px;
+    padding : 30px 0 0 20px;
+}
+#timetable {
+    height : auto; width:900px;
+    margin : 50px 0 0 0;
+}
+.timetable_tr {
+    clear:both;
+    height:52px;
+}
+.timetable_td {
+    float:left;
+    width:80px;height:50px;
+    border:1px dotted #b00;
+    background-color:#f2d5b2;
+    font-size:small;
+}
+.timetable_td_top {
+    float:left;
+    width:80px;
+    height:35px;
+    border:1px dotted #800;
+    padding-top:15px;
+    text-align:center;
+    background-color:#900;
+    color:#fff;
+    font-weight:bold;
+}
+.timetable_td_left {
+    float:left;
+    width:50px;height:35px;
+    border:1px dotted #800;
+    padding-top:15px;
+    text-align:center;
+    background-color:#900;
+    color:#fff;
+    font-weight:bold;
+}
+.timetable_td_tl {
+    float:left;
+    width:52px;height:35px;
+    padding-top:15px;
+}
+.sub_emp {
+    float:left;
+    width:200px;
+    background-color:gray
+}
+
+.tt-subject {
+    padding-top:10px;
+    text-align:center;
+}
+
+.selected_div {
+    background-color:#800;
+}
+
+.subjects {
+    margin-left:10px;
+    margin-bottom:10px;
+    float:left;
+    border:1px solid #b00;
+    width:78px;height:38px;
+    font-size:small;
+    padding-top:10px;
+    text-align:center;
+    background-color:#f2d5b2;
+}

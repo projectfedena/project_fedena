@@ -1,0 +1,67 @@
+<%- @day = TimetableWeekDay.find(:all) -%>
+<%- c_id = @timetable[0].course_id unless @timetable[0].nil? -%>
+<%- @subjects = Subject.find_all_by_course_id(c_id) -%>
+<%- @period_timing = PeriodTiming.find(:all, :conditions => "break = false") -%>
+
+<div class="timetable_tr">
+  <div class="timetable_td_tl">
+          <%= image_tag("loader.gif",
+              :align => "absmiddle",
+              :border => 0,
+              :id => "loader",
+              :style =>"display: none;" ) %>
+   &nbsp;</div>
+  <% @period_timing.each do |pt| %>
+    <div class="timetable_td_top"><%= pt.name%> </div>
+  <% end %>
+</div>
+
+ <%- @day.each do |d| -%>
+<div class="timetable_tr">
+<div class="timetable_td_left"><%= d.name[0,3].upcase %></div>
+<%- @period_timing.each do |pt1| -%>
+<div class="timetable_td">
+<%- @tte = TimetableEntry.find_by_timetable_week_day_id_and_period_timing_id_and_course_id(d.id, pt1.id, c_id) -%>
+<div id="drop_<%= @tte.id %>" style="width:80px;height:50px;" onClick="update_selected_divs('<%= @tte.id %>');">
+<div class="tt-subject" id="subject_name_<%= @tte.id %>">
+<%= @tte.subject.name unless @tte.subject.nil? %>
+<%= link_to_remote image_tag("/images/buttons/tt_delete_1.png", :border => 0),
+                    :url => {:action => "delete_subject", :id => @tte.id},
+                    :complete => "clear_selected_divs();",
+                    :before => "Element.show('loader')",
+                    :success => "Element.hide('loader')",
+                    :update => "timetable" \
+                    unless @tte.subject.nil?  -%>
+</div>
+</div>
+<%= drop_receiving_element("drop_#{@tte.id}",
+              :accept => "subjects",
+              :onDrop => "function(draggable_element, droppable_element) { $(droppable_element).highlight(); make_ajax_calls(#{@tte.id}, draggable_element.id.split('_').last()); }") -%>
+</div>
+<% end %>
+</div>
+<% end %>
+
+<% unless @validation_problems.nil? %>
+<div id="errors">
+<% @validation_problems.each do |tte_id, errors| %>
+<div id="error_div_<%= tte_id %>" class="error-explanation">
+<b>Warning</b> :
+<%- errors["messages"].each do |err| -%>
+<%= err -%>
+<%- end -%>
+- On <%= TimetableEntry.find(tte_id).timetable_week_day.name %> (<%= TimetableEntry.find(tte_id).period_timing.name -%>)
+<%= link_to_remote "Continue", :url=> {:action=> "tt_entry_update"},
+                   :with   => "'&sub_id=#{errors["info"]["sub_id"]}' + '&tte_id=#{errors["info"]["tte_id"]}'",
+                   :before => "Element.show('loader')",
+                   :success => "Element.hide('loader')",
+                   :update=> "timetable" -%> |
+<%= link_to_remote "Cancel", :url=>{:action=>"tt_entry_noupdate"},
+                             :before => "Element.show('loader')",
+                             :success => "Element.hide('loader')",
+                             :with   => "'emp_id=#{errors["info"]["emp_id"]}' + '&sub_id=#{errors["info"]["sub_id"]}' + '&tte_id=#{errors["info"]["tte_id"]}'",
+                             :update=> "error_div_#{tte_id}" -%>
+</div>
+<%- end -%>
+</div>
+<%- end -%>

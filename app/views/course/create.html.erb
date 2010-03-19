@@ -1,0 +1,42 @@
+<div id="content-header">
+  <img src="/images/examination/index/page_logo.jpg" alt="" />
+  <h1>Class Manager</h1>
+  <h3>Create a new class</h3>
+  <div id="app-back-button">
+     <%= link_to image_tag("/images/buttons/back.png", :border => 0), :back %>
+  </div>
+</div>
+
+<div id="page-yield">
+
+  <% unless flash[:notice].nil? %>
+    <p class="flash-msg"> <%= flash[:notice] %> </p>
+  <% end %>
+
+  <%- form_for :course do |c| -%>
+
+    <%= error_messages_for 'course' %>
+    
+    <div class="label-field-pair">
+      <label for="course_grade">Course</label>
+      <div class="text-input-bg"> <%= c.text_field :grade %> </div>
+    </div>
+
+    <div class="label-field-pair">
+      <label for="course_section">Section</label>
+      <div class="text-input-bg"> <%= c.text_field :section %> </div>
+    </div>
+
+    <div class="submit-area">
+      <%=image_submit_tag("/images/buttons/create.png") %>
+    </div>
+
+  <%- end -%>
+
+
+  <div id="course-list">
+    <%= render :partial => "course_list" %>
+  </div>
+  
+</div>
+ 

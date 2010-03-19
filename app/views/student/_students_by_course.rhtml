@@ -1,0 +1,8 @@
+
+<% @students.each do |r| %>
+  <div id="student_name">
+    <% link_value = r.first_name + " " + r.last_name %>
+    <%=  link_to link_value, :controller => "student", :action => "profile", :id => r.id %><br/>
+    <small>Class & Section: <%= r.course.grade %> <%= r.course.section %><br/>Adm No. <%= r.admission_no %></small>
+  </div>
+<% end %>

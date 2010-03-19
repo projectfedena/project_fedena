@@ -1,0 +1,2 @@
+
+page.replace_html 'grade-table', :partial => 'grades_list'

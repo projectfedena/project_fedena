@@ -1,0 +1,31 @@
+<div id="content-header">
+  <img src="/images/examination/index/page_logo.jpg" alt="" />
+  <h1>Grading system</h1>
+  <h3>Edit</h3>
+  <div id="app-back-button">
+    <%= link_to image_tag("/images/buttons/back.png", :border => 0), :back %>
+  </div>
+</div>
+
+<div id="page-yield">
+
+  <% unless flash[:notice].nil? %>
+    <p class="flash-msg"> <%= flash[:notice] %> </p>
+  <% end %>
+
+  <div id="instructions">
+    <b>Enter the values of the lowest marks corresponding to each grade in the given form.</b><br/><br/>
+    <i>For example, enter 90 next to A+ if you want all scores of 90 and above to be marked as grade A+.</i>
+  </div>
+
+  <%= render :partial => "grades_list" %>
+
+  <div id="redbox"></div>
+
+  <%#= link_to_remote_redbox 'redbox', :url => { :action => 'test' }, :complete => 'RedBox.setWindowPosition();' %>
+
+  <div id="dynamic-form">
+    <%= link_to_remote "Add a new grading level", :url => { :action => 'grading_form_new' } %>
+    <div id="grading-form"> </div>
+  </div>
+</div>

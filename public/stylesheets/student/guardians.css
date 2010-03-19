@@ -1,0 +1,118 @@
+
+#page-yield {
+    margin-top : 20px;
+}
+#student_profile_heading {
+    clear:both;
+    height:230px;
+    width:700px;
+}
+#profile_picture_display {
+    background : #fff url(../../images/admission/profile_picture_frame.png) center center no-repeat;
+    float : left;
+    height : 210px;
+    margin-left : 50px;
+    width:189px;
+}
+#profile_picture_display img {
+    width:125px;height:160px;
+    padding-top:25px;padding-left:32px;
+}
+#student_main_info {
+    float:left;
+    margin-left:50px;
+    width:400px;
+}
+#student_main_info h3 {
+    margin:0;
+    padding:0;
+    margin-top:50px;
+}
+#student_main_info h4 {
+    margin : 0;
+    padding : 0;
+    color : #b00;
+    margin-top : 10px;
+}
+#student_main_info h6 {
+    margin : 0;
+    padding : 0;
+    color : #b00;
+    margin-top : 5px;
+}
+#guardians-links {
+    margin : 20px 0 20px 100px;
+}
+#guardians-links ul li {
+    font-weight : bold;
+}
+#guardians-links ul li a {
+    text-decoration : none;
+}
+#parent-list {
+    height : auto;
+    width : 760px;
+}
+#new_profile_info_top {
+    margin-left:50px;
+    height:141px;
+    width:697px;
+    background:#fff url(../../images/master_student/profile/new_info_top_bg.jpg) no-repeat;
+}
+.new_profile_info_area1 {
+    margin-left:50px;
+    height:87px;
+    width:682px;
+    background:#fff url(../../images/master_student/profile/new_info_bg.jpg) no-repeat;
+}
+.profile_info_label_top {
+    padding-top:25px;
+    height:30px;
+    width:120px;
+    text-align:right;
+    padding-right:20px;
+    float:left;
+    font-weight:bold;
+    color:#548ab2;
+}
+.profile_info_label1 {
+    padding-top:15px;
+    height:25px;
+    width:120px;
+    text-align:right;
+    padding-right:20px;
+    float:left;
+    font-weight:bold;
+    color:#548ab2;
+}
+.profile_info_text_top {
+    padding-top:25px;
+    padding-left:20px;
+    height:30px;
+    width:500px;
+    float:left;
+    font-weight:bold;
+    color:#000;
+    }
+.profile_info_text {
+    padding-top:15px;
+    padding-left:20px;
+    height:25px;
+    width:500px;
+    float:left;
+    font-weight:bold;
+    color:#000;
+}
+.user_button {
+    margin-top:40px;
+    margin-left:270px;
+}
+.parent-edit-button {
+    float:left;
+	margin-top: 20px;
+	margin-left:400px ; 
+}
+
+.parent-del-button {
+    margin : 20px 0 40px 600px;
+}

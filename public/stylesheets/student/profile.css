@@ -1,0 +1,108 @@
+
+#page-yield {
+    margin-top : 20px;
+}
+#profile_picture_display {
+    float:left;
+    width:189px;
+    height:210px;
+    margin-left:50px;
+    background:#fff url(../../images/admission/profile_picture_frame.png) center center no-repeat;
+}
+#profile_picture_display img {
+    width:125px;
+    height:160px;
+    padding-top:25px;
+    padding-left:32px;
+}
+#student_main_info {
+    float:left;
+    margin-left:50px;
+    width:400px;
+}
+#student_main_info h3 {
+    margin:0;
+    padding:0;
+    margin-top:50px;
+}
+#student_main_info h4 {
+    margin:0;
+    padding:0;
+    color:#b00;
+    margin-top:10px;
+}
+#student_main_info h6 {
+    margin:0;
+    padding:0;
+    color:#b00;
+    margin-top:5px;
+}
+#student_main_info h5 {
+    background-color:#eee;
+}
+#edit_student_profile {
+    clear:both;
+    margin:0 auto;
+    padding-left:170px;
+}
+#new_profile_info_top {
+    margin-left:50px;
+    height:141px;
+    width:697px;
+    background:#fff url(../../images/master_student/profile/new_info_top_bg.jpg) no-repeat;
+}
+.new_profile_info_area1 {
+    margin-left:50px;
+    height:87px;
+    width:682px;
+    background:#fff url(../../images/master_student/profile/new_info_bg.jpg) no-repeat;
+}
+.profile_info_label_top {
+    padding-top:25px;
+    height:30px;
+    width:120px;
+    text-align:right;
+    padding-right:20px;
+    float:left;
+    font-weight:bold;
+    color:#548ab2;
+}
+.profile_info_label1 {
+    padding-top:15px;
+    height:25px;
+    width:120px;
+    text-align:right;
+    padding-right:20px;
+    float:left;
+    font-weight:bold;
+    color:#548ab2;
+}
+.profile_info_text_top {
+    padding-top:25px;
+    padding-left:20px;
+    height:30px;
+    width:500px;
+    float:left;
+    font-weight:bold;
+    color:#000;
+    }
+.profile_info_text {
+    padding-top:15px;
+    padding-left:20px;
+    height:25px;
+    width:500px;
+    float:left;
+    font-weight:bold;
+    color:#000;
+}
+.profile_info_text span {
+    font-weight : normal;
+    font-size : 0.9em;
+}
+.profile_info_text a {
+    color : #95060C;
+}
+.user_button {
+    margin-top:40px;
+    margin-left:270px;
+}

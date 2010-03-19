@@ -1,0 +1,175 @@
+<script src="/javascripts/jquery/jquery-1.3.2.min.js" type="text/javascript"></script>
+<script src="/javascripts/jquery/jquery-ui.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+$jq = jQuery.noConflict();
+$jq(function(){
+  $jq("#student_date_of_birth").datepicker({dateFormat: 'yy-mm-dd', yearRange: '-30:+0' });
+  $jq("#student_admission_date").datepicker({dateFormat: 'yy-mm-dd', yearRange: '-15:+0' });
+});
+</script>
+
+  <div id="content-header">
+    <img src="/images/admission/admission_page_logo.jpg" />
+    <h1>Edit details</h1>
+    <h3>Student details</h3>
+    <div id="app-back-button">
+     <%= link_to image_tag("/images/buttons/back.png", :border => 0), :back %>
+    </div>
+  </div>
+
+<div id="page-yield">
+
+  <% unless flash[:notice].nil? %>
+    <p class="flash-msg"> <%= flash[:notice] %> </p>
+  <% end %>
+
+  <% form_for :student, :url => {:action => 'edit'}, :html => {:multipart => true} do |s| %>
+
+  <div id="admission1-form">
+    <div id="necessary-field-notification"> Fields marked with <span class="necessary-field">*</span> must be filled.</div>
+
+    <div id="autofill_area">
+    <div class="label-field-pair">
+      <label for="master_student_admission_no">Admission no. <span class="necessary-field">*</span></label>
+      <div class="text_input_bg"><%= s.text_field :admission_no, :value => @student.admission_no %></div>
+    </div>
+
+    <div class="label-field-pair">
+      <label for="master_student_admission_date">Admission date. <span class="necessary-field">*</span></label>
+      <div class="text_input_bg"><%= s.text_field :admission_date, :value => @student.admission_date, :autocomplete => "off" %> </div>
+    </div>
+    </div>
+
+    <div id="name_field_block">
+      <label for="master_student_first_name">Name <span class="necessary-field">*</span></label>
+      <div class="text_input_bg"><%= s.text_field :first_name, :value =>@student.first_name %></div>
+      <div class="text_input_bg"><%= s.text_field :middle_name, :value =>@student.middle_name %></div>
+      <div class="text_input_bg"><%= s.text_field :last_name, :value =>@student.last_name %></div>
+    </div>
+
+  <div id="admission1_form_vertical_block_left">
+
+    <div class="label-field-pair">
+      <label for="master_student_grade">Class & Section <span class="necessary-field">*</span></label>
+      <div class="text-input-bg"><%= select :student, :course_id, @courses.map {|c| [c.grade + " " + c.section, c.id]},
+          :selected => @student.course.id %></div>
+    </div>
+
+    <div class="label-field-pair">
+      <label for="master_student_date_of_birth">Date of birth <span class="necessary-field">*</span></label>
+      <div class="text-input-bg"><%= s.text_field :date_of_birth, :value => @student.date_of_birth, :autocomplete => 'off' %></div>
+    </div>
+
+    <div class="label-field-pair">
+      <label for="master_student_gender">Gender</label>
+
+      <label class="label_for_gender" for="master_student_gender_true">Male</label>
+      <%= s.radio_button  "gender", "true", :checked => @m %>
+
+      <label class="label_for_gender" for="master_student_gender_false">Female</label>
+      <%= s.radio_button  "gender", "false", :checked=> !@m %>
+    </div>
+
+    <div class="label-field-pair">
+      <label for="master_student_blood_group">Blood group</label>
+      <div class="text-input-bg"><%= select :student, :blood_group, ["A+", "A-", "B+", "B-", "O+", "O-", "AB+", "AB-"],
+                                            :selected => @student.blood_group %></div>
+    </div>
+
+    <div class="label-field-pair">
+      <label for="master_student_birth_place">Birth place</label>
+      <div class="text_input_bg"><%= s.text_field :birth_place, :value =>@student.birth_place %></div>
+    </div>
+
+    <div class="label-field-pair">
+      <label for="master_student_nationality">Nationality</label>
+      <div class="text-input-bg"><%= select :student, :nationality_id, @nationalities.map {|c| [c.name, c.id]}, :selected => @student.nationality.id %></div>
+    </div>
+
+    <div class="label-field-pair">
+      <label for="master_student_birth_place">Language</label>
+      <div class="text_input_bg"><%= s.text_field :language, :value => @student.language %></div>
+    </div>
+
+    <div class="label-field-pair">
+      <label for="master_student_religion">Religion</label>
+      <div class="text_input_bg"><%= s.text_field :religion, :value =>@student.religion %></div>
+    </div>
+
+    <div class="label-field-pair">
+      <label for="master_student_category">Category</label>
+      <div class="text_input_bg"><%= s.text_field :category, :value =>@student.category %></div>
+    </div>
+
+  </div>
+
+  <div id="admission1_form_vertical_block_right">
+
+     <div class="label-field-pair">
+      <label for="master_student_city">Address Line 1</label>
+      <div class="text_input_bg"><%= text_field_tag  "address1", @address[0] %></div>
+    </div>
+
+    <div class="label-field-pair">
+      <label for="master_student_city">Address Line 2</label>
+      <div class="text_input_bg"><%= text_field_tag :address2, @address[1] %></div>
+    </div>
+
+    <div class="label-field-pair">
+      <label for="master_student_city">City</label>
+      <div class="text_input_bg"><%= s.text_field :city, :value => @student.city %></div>
+    </div>
+
+    <div class="label-field-pair">
+      <label for="master_student_state">State</label>
+      <div class="text_input_bg"><%= s.text_field :state, :value =>@student.state %></div>
+    </div>
+
+    <div class="label-field-pair">
+      <label for="master_student_pin_code">PIN code</label>
+      <div class="text_input_bg"><%= s.text_field :pin_code, :value =>@student.pin_code %></div>
+    </div>
+
+    <div class="label-field-pair">
+      <label for="master_student_country">Country</label>
+      <div class="text-input-bg"><%= select :student, :country_id, @countries.map {|c| [c.name, c.id]}, :selected => @student.country.id %></div>
+    </div>
+
+    <div class="label-field-pair">
+      <label for="master_student_phone1">Phone 1</label>
+      <div class="text_input_bg"><%= s.text_field :phone1, :value =>@student.phone1 %></div>
+    </div>
+
+    <div class="label-field-pair">
+      <label for="master_student_phone2">Phone 2</label>
+      <div class="text_input_bg"><%= s.text_field :phone2, :value =>@student.phone2 %></div>
+    </div>
+
+    <div class="label-field-pair">
+      <label for="master_student_email">Email</label>
+      <div class="text_input_bg"><%= s.text_field :email, :value => @student.email %></div>
+    </div>
+
+<script>
+  (function($){$.fn.filestyle=function(options){var settings={width:250};if(options){$.extend(settings,options);};return this.each(function(){var self=this;var wrapper=$("<div>").css({"width":settings.imagewidth+"px","height":settings.imageheight+"px","background":"url("+settings.image+") 0 0 no-repeat","background-position":"right","display":"inline","position":"absolute","overflow":"hidden"});var filename=$('<input class="file">').addClass($(self).attr("class")).css({"display":"inline","width":settings.width+"px"});$(self).before(filename);$(self).wrap(wrapper);$(self).css({"position":"relative","height":settings.imageheight+"px","width":settings.width+"px","display":"inline","cursor":"pointer","opacity":"0.0"});if($.browser.mozilla){if(/Win/.test(navigator.platform)){$(self).css("margin-left","-142px");}else{$(self).css("margin-left","-168px");};}else{$(self).css("margin-left",settings.imagewidth-settings.width+"px");};$(self).bind("change",function(){filename.val($(self).val());});});};})(jQuery);
+</script>
+
+    <div class="label-field-pair">
+      <label for="master_student_image_file">Upload photo</label>
+      <div class="text_input_bg"><%= s.file_field :image_file %></div>
+      <script type='text/javascript'>
+        $jq("input[type=file]").filestyle({
+          image: "/images/buttons/choose-file.gif",
+          imageheight : 32,
+          imagewidth : 82,
+          width : 135
+        });
+      </script>
+    </div>
+  </div>
+</div>
+
+  <%= image_submit_tag "/images/buttons/update.png", :class => "submit_button" %>
+<% end %>
+
+</div>

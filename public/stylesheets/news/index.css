@@ -1,0 +1,83 @@
+
+#search_add_news_area {
+    margin-top:15px;
+}
+.news_search_add {
+    float:left;
+    margin-left:45px
+}
+.news_search_add a {
+    display:block;
+    height:175px;
+    width:175px;
+}
+.news_search_add img {
+    margin-top:15px;
+}
+#news_bg {
+    height:163px;
+    width:391px;
+    background:#fff url(../../images/form_bg/user_search_box.jpg) no-repeat;
+}
+#news_bg input {
+    padding-top:0px;
+    width:265px;
+    height:45px;
+    margin:15px 0 0 35px;
+    float:left;
+    border:none;
+    background:transparent;
+    font-size:30px;
+    font-weight:bold;
+    color:#666;
+    margin-bottom:18px;
+}
+#news_bg h2 {
+    color:#555;
+    font-size:20px;
+    width:175px;
+    padding:0;
+    margin:0;
+    padding-left:28px;
+    padding-top:20px;
+}
+#news_result {
+    margin:0px;
+    padding:0px;
+    height:300px;
+    width:725px;
+    margin:200px 0 0 45px;
+}
+#news_no_result {
+    font-weight:bold;
+    color:#b00;
+}
+#news_search_result {
+    padding:10px 10px 10px 0;
+    text-decoration:none;
+    width:255px;
+    float:left;
+    background:#fff url(../../images/student_details/ajax_result_underline.jpg) bottom left no-repeat;
+}
+#news_search_result a {
+    text-decoration:none;
+    color:#000;
+    font-weight:bold;
+}
+#go {
+    float:left;
+    margin:0;
+    padding:0;
+    margin-top:2px;
+}
+#go input {
+    height:58px;
+    width:62px;
+    margin:0;
+    padding:0;
+}
+#news_show_flash {
+    padding:10px 0 10px 20px;
+    background-color:#ddd;
+    color:#787777;
+}

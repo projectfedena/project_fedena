@@ -1,0 +1,25 @@
+
+
+
+
+
+
+    <div id ="res_table">
+      <div id="result-info">
+        <%= @course.grade %> - <%= @course.section %> : <%= @examtype.name %>
+      </div>
+      <div class="res_tr">
+        <div class="res_td_name"><b>Subject</b></div>
+        <div class="res_td"><b>Date</b></div>
+      </div>
+      <% @subjects.each do |s| %>
+        <% timetable = Examination.find_by_subject_id_and_examination_type_id(s.id,@examtype.id) %>
+        <% unless timetable.nil? %>
+          <div class="res_tr">
+            <div class="res_td_name"><%= s.name %></div>
+            <div class="res_td"> <%= timetable.date  %></div>
+          <% end %>
+        </div>
+      <%- end -%>
+    </div>
+

@@ -1,0 +1,46 @@
+<div id="content_header">
+  <h1 id="main_heading">Welcome</h1>
+  <h3 id="sub_heading">to Fedena dashboard</h3>
+</div>
+
+<% unless flash[:notice].nil? %> <p class="flash-msg"> <%= flash[:notice] %> </p> <% end %>
+
+<div id="user_options">
+
+  <% if @user.admin? %>
+    <%= link_to "", {:controller => "student", :action => "admission1"},
+      :class => "option_buttons", :id => "admission_button", :title => "Enter a Students admision details into the school records."%>
+    <%= link_to "", {:controller => "student", :action => "index"},
+      :class => "option_buttons", :id => "student_details_button", :title => "Search for an existing and former student records."%>
+    <%= link_to "", {:controller => "user", :action => "index"},
+      :class => "option_buttons", :id => "manage_users_button", :title => "Manage the Users of Fedena." %>
+    <%= link_to "", {:controller => "news", :action => "index"},
+      :class => "option_buttons", :id => "manage_news_button",:title => "View or publish latest school news and announcements"%>
+    <%= link_to "", {:controller => "exam", :action => "index"},
+      :class => "option_buttons", :id => "examinations_button",:title => "See examination details and results" %>
+    <%= link_to "", {:controller => "timetable", :action => "index"},
+      :class => "option_buttons", :id => "timetable_button",:title => "Timetable management module" %>
+    <%= link_to "", {:controller => "attendance", :action => "index"},
+      :class => "option_buttons", :id => "student_attendance_button", :title => "Manage the attendance for the students" %>
+    <%= link_to "", {:controller => "configuration", :action => "index"},
+      :class => "option_buttons", :id => "settings_button", :title => "Configure the basic school settings" %>
+
+  <% elsif @user.student? %>
+
+    <%= link_to "", {:controller => "student", :action => "profile", :id => @student.id},
+      :class => "option_buttons", :id => "student_details_button", :title => "        View your profile." %>
+    <%= link_to "", {:controller => "news", :action => "index"},
+      :class => "option_buttons", :id => "campus_news_button",:title => "Search for news/announcements"%>
+    <%= link_to "", {:controller => "timetable", :action => "student_view",:id=>@student.id},
+      :class => "option_buttons", :id => "timetable_button",:title => "Timetable management module" %>
+    <%= link_to "", {:controller => "student", :action => "reports",:id => @student.id},
+      :class => "option_buttons", :id => "academic_button",:title => "         Academic Reports   " %>
+    <%= link_to "", {:controller => "reminder", :action => "index"},
+        :class => "option_buttons", :id => "reminders_button", :title => "Student reminders."%>
+
+  <% end %>
+
+
+</div>
+
+<div id="option_description"> </div>

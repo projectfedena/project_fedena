@@ -1,0 +1,29 @@
+<div id="content-header">
+  <h1>New Academic Year</h1>
+  <h3>Migrate classes</h3>
+</div>
+
+<div id="page-yield">
+
+  <% unless flash[:notice].nil? %> <p class="flash-msg"> <%= flash[:notice] %> </p> <% end %>
+
+  <div id="old-courses">
+
+    <% form_for :migrate_courses do |m| %>
+      <% @courses.each do |course| %>
+        <div class="old-course-checkbox"> <%= check_box_tag "migrate_courses[course_id][]", course.id, :checked => "checked" %> <%= course.grade %> - <%= course.section %> </div>
+      <% end %>
+      <div id="submit-button-old-courses"><%= image_submit_tag "/images/buttons/update.png" %></div>
+
+    <% end %>
+
+  </div>
+
+  <div id="new-courses">
+    <div id="new-course-list">
+      <%= render :partial => "course_list" %>
+      <div id="course-form"> </div>
+    </div>
+  </div>
+
+</div>

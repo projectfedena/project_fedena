@@ -1,0 +1,74 @@
+<div id="content-header">
+  <img src="/images/examination/index/page_logo.jpg" alt="" />
+  <h1>Reminder</h1>
+  <h3>Create/New</h3>
+  <div id="app-back-button">
+    <%= link_to image_tag("/images/buttons/back.png", :border => 0), :back %>
+  </div>
+</div>
+
+<div id="inner-tab-menu">
+  <ul>
+    <% unless @new_reminder_count.size == 0 %>
+      <li><%= link_to "<b>Inbox (#{@new_reminder_count.size})</b>", :controller=>"reminder", :action=>"index" %></li>
+    <% else %>
+      <li><%= link_to "Inbox", :controller=>"reminder", :action=>"index"%></li>
+    <% end %>
+    <li><%= link_to "Sent", :controller=>"reminder", :action=>"sent_reminder"%></li>
+    <li><%= link_to "Create", :controller=>"reminder", :action=>"create_reminder"%></li>
+  </ul>
+</div>
+
+
+
+
+<div id="page-yield">
+
+  <% unless flash[:notice].nil? %>
+    <p class="flash-msg"> <%= flash[:notice] %> </p>
+  <% end %>
+
+
+
+  <div id="application-list">
+    <div class="container-head">
+    <div id="from-label">From</div>
+    <div id="subject-label">Subject</div>
+    <div id="date-label">Date</div>
+    <div class="extender"></div>
+    </div>
+
+    <div id="unread_reminder">
+      <% unless @unread_reminders == [] %>
+        <% @unread_reminders.each do |ur| %>
+          <% sender_user = User.find(ur.sender)  %>
+          <div class="container<%= cycle('odd', 'even')%> ">
+          <div class="unread_from_name"><%= link_to "#{sender_user.first_name}", :controller=>"reminder", :action=>"view_reminder",:id2=>ur.id %></div>
+          <div class="unread_subject"><%= link_to "#{ur.subject}",  :controller=>"reminder", :action=>"view_reminder",:id2=>ur.id %></div>
+          <div class="unread_sent_date"><%= link_to "#{ur.created_at.strftime("%d-%m-%Y")}",  :controller=>"reminder", :action=>"view_reminder",:id2=>ur.id %></div>
+          <div class="extender"></div>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+
+    <div id="read_reminder">
+      <% unless @read_reminders == [] %>
+        <% @read_reminders.each do |r| %>
+          <% sender_user = User.find(r.sender)  %>
+          <div class="container<%= cycle('odd', 'even') %>">
+          <div class="from_name"><%= link_to "#{sender_user.first_name}", :controller=>"reminder", :action=>"view_reminder",:id2=>r.id %></div>
+          <div class="subject"><%= link_to "#{r.subject}",  :controller=>"reminder", :action=>"view_reminder",  :id2=>r.id %></div>
+          <div class="sent_date"><%= link_to "#{r.created_at.strftime("%d-%m-%Y")}",  :controller=>"reminder", :action=>"view_reminder", :id2=>r.id %></div>
+          <div class="extender"></div>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+
+  </div>
+
+
+
+
+</div>

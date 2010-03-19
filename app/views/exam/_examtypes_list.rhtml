@@ -1,0 +1,9 @@
+<ul><%- @exam_types.each do |examtype| -%>
+<li>
+  <div class="examtype-name"><%= examtype.name %></div>
+  <div class="examtype-edit-link"><%= link_to "Edit", :action => "edit_examtype", :id => examtype.id %></div>
+  <div class="examtype-delete-link"><%= link_to_remote "Delete",
+        :url => { :controller => "exam", :action => "delete_examtype", :id => examtype.id },
+        :update => "examtypes-list" %></div>
+</li>
+<%- end -%></ul>

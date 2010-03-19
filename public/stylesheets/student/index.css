@@ -1,0 +1,19 @@
+
+
+#view_all {margin-left:50px;}
+#view_all a {font-weight:bold;color:#000;}
+
+#search_box_bg{background:#fff url(../../images/student_details/search_box_bg.jpg) no-repeat;height:163px;width:614px;margin:35px 0 0 50px;padding-left:50px;padding-top:15px}
+  #search_box_bg label{padding-top:0px;color:#555;font-size:25px;}
+  #search_textbox input{padding-top:10px;width:500px;height:45px;margin:0px 0 0 5px;float:left;border:none;background:transparent;font-size:30px;color:#666; margin-bottom:18px;}
+  .radio_button{width:400px; margin-top:0px; height:25px;color:#555}
+  #information{height:100px;width:614px;margin-left:0px;padding-left:50px}
+  #no_result{font-weight:bold;color:#b00}
+  #ajax_result {padding:10px 0 10px 0;text-decoration:none;width:204px;float:left;background:#fff url(../../images/student_details/ajax_result_underline.jpg) bottom left no-repeat}
+  #ajax_result a{color:#000;font-weight:bold}
+
+  /* ALL STUDENT CSS */
+
+  #all_students{margin:0px; padding:0px; height:300px; width:725px; margin:20px 0 0 40px;}
+  #student_name{padding:10px 10px 10px 0;text-decoration:none;width:230px;float:left;background:#fff url(../../images/student_details/ajax_result_underline.jpg) bottom left no-repeat}
+  #student_name a {text-decoration:none;color:#000;font-weight:bold}

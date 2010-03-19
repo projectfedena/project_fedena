@@ -1,0 +1,17 @@
+
+<div id="grade-table">
+<% form_for :grading do |f| %>
+
+  <% @grades.each do |g| %>
+    <div class="grade-tr">
+      <div class="grade-td2"> <%= g.name %> </div>
+      <div class="grade-td1"> <%= f.text_field :name, :index => g.id, :value => g.min_score, :size => 4 %> </div>
+      <%= link_to_remote 'Ren', :url => { :action => 'grading_form_edit', :id => g.id } %>
+      <%= link_to_remote 'Del', :url => { :action => 'delete_grading', :id => g.id } %>
+    </div>
+  <% end %>
+
+  <div id="submit-area"> <%= image_submit_tag "/images/buttons/finish.png" %> </div>
+
+<% end %>
+</div>

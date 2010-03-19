@@ -1,0 +1,21 @@
+
+<ul>
+  <% unless @holidays.nil? %>
+    <li class="heading">
+      <div class="holiday-name"> Holiday description </div>
+      <div class="holiday-start-date"> Start date </div>
+      <div class="holiday-end-date"> End date </div>
+    </li>
+  <% end %>
+
+  <%- @holidays.each do |h| -%>
+    <li>
+      <div class="holiday-name"> <%= h.name -%> </div>
+      <div class="holiday-start-date"> <%= h.start_date.strftime("%d %b, %Y") unless h.start_date.nil? -%> </div>
+      <div class="holiday-end-date"> <%= h.end_date.strftime("%d %b, %Y") unless h.end_date.nil? -%> </div>
+      <div class="holiday-edit"> <%= link_to "Edit", :action => "edit", :id => h.id -%> </div>
+      <div class="holiday-delete"> <%= link_to_remote "Delete", :url => {:action => "delete", :id => h.id},
+                                        :update => "holiday-list" %>  </div>
+    </li>
+  <%- end -%>
+</ul>

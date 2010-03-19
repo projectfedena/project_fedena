@@ -1,0 +1,43 @@
+
+.label-field-pair {
+    margin-left : 50px;
+}
+#submit-button {
+    clear : both;
+    margin : 0 0 0 250px;
+    padding : 20px 0 30px 0;
+}
+#holiday-list ul {
+    height : auto; width : 650px;
+    margin : 0;
+    padding : 0;
+}
+#holiday-list ul li {
+    background : #fff url(../../images/_global/list-bg-repeat.jpg) repeat-x;
+    height : 1.5em; width : auto;
+    list-style-type : none;
+    padding : 0.5em 0 0 50px;
+}
+#holiday-list ul li.heading {
+    background : none;
+    font-weight : bold;
+    height : 2.5em; width : auto;
+    padding : 1em 0 0 50px;
+}
+#holiday-list ul li div {
+    float : left;
+}
+#holiday-list ul li div.holiday-name {
+    height : auto; width : 225px;
+}
+#holiday-list ul li div.holiday-start-date,
+#holiday-list ul li div.holiday-end-date {
+    height : auto; width : 130px;
+}
+#holiday-list ul li div.holiday-edit {
+    height : auto; width : 50px;
+}
+#holiday-list ul li div a {
+    color : #000;
+    text-decoration : none;
+}

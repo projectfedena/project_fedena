@@ -1,0 +1,19 @@
+
+<% form_remote_for :course, :url => {:action => 'update_courses'},
+  :update => "new-course-list" do |f| %>
+
+  <div class="label-field-pair">
+    <label for="course_grade">Grade</label>
+    <div class="text-input-bg"> <%= f.text_field :grade %> </div>
+  </div>
+
+  <div class="label-field-pair">
+    <label for="course_section">Section</label>
+    <div class="text-input-bg"> <%= f.text_field :section %> </div>
+  </div>
+
+  <div class="submit-area">
+    <%= image_submit_tag("/images/buttons/create.png") %>
+  </div>
+
+<% end %>

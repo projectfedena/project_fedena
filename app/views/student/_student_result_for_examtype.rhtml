@@ -1,0 +1,44 @@
+<div id="exam-results">
+
+  <% unless @user.student == true %>
+  <div class="prev-next-links">
+    <%= link_to '<', :action => 'exam_report', :course => params[:course], :student => @prev_student.id, :exam => @examtype.id %>
+    <%= link_to '>', :action => 'exam_report', :course => params[:course], :student => @next_student.id, :exam => @examtype.id %>
+  </div>
+  <% end %>
+
+  <div class="student-name"><%= @student.full_name %></div>
+  
+    <div id="results-table">
+      <div class="results-th">
+        <div class="results-table-subject">Subjects</div>
+        <div class="results-table-marks">Marks</div>
+        <div class="results-table-maxmarks">Max</div>
+        <div class="results-table-grade">Grade</div>
+        <div class="results-table-percentage">(in %)</div>
+      </div>
+
+      <% @results.each_pair do |k, v| %>
+
+        <%  unless v['result'].grading.nil? %>
+          <%  grade = v['result'].grading.name %>
+        <% else %>
+          <% grade = "NA" %>
+        <% end %>
+        
+        <div class="results-tr">
+          <div class="results-table-subject"><%= v['subject'].name %></div>
+          <div class="results-table-marks"><%= v['result'].marks %></div>
+          <div class="results-table-maxmarks"><%= v['result'].examination.max_marks %></div>
+          <div class="results-table-grade"><%= grade %></div>
+          <div class="results-table-percentage"><%= v['result'].percentage_marks %></div>
+        </div>
+      <% end %>
+    </div>
+
+    <% if @results.empty? %> <p><%= "No results found." %></p> <% end %>
+
+    <script type="text/javascript" src="/javascripts/swfobject.js"></script>
+    <%= @graph %>
+
+</div>

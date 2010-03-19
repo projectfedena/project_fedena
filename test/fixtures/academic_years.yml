@@ -1,0 +1,5 @@
+
+y1:
+  id: 1
+  start_date: <%= Date.today - 1.years %>
+  end_date: <%= Date.today %>

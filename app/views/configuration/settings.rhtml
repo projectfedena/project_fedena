@@ -1,0 +1,53 @@
+<div id="content-header">
+  <img src="/images/show_news/show_news_logo.png" />
+  <h1>Configuration</h1>
+  <h3>General Settings</h3>
+  <div id="app-back-button">
+     <%= link_to image_tag("/images/buttons/back.png", :border => 0), :back %>
+  </div>
+</div>
+
+<div id="page-yield">
+
+  <% unless flash[:notice].nil? %>
+    <p class="flash-msg"> <%= flash[:notice] %> </p>
+  <% end %>
+
+  <% form_for(:configuration,:html=> {:multipart=>true}) do |c| %>
+
+    <div class="label-field-pair">
+      <label for="configuration_currency_type">School/College Name</label>
+      <div class="text-input-bg">
+        <%= text_field :configuration, :school_college_name, :value => @school_college_name.config_value %>
+      </div>
+    </div>
+
+    <div class="label-field-pair">
+      <label for="configuration_student_attendance_type">Student Attendance Type</label>
+      <div class="text-input-bg">
+        <%= select :configuration, :student_attendance_type, ["Daily", "Subject Wise"],
+          :selected => @student_attendance_type.config_value %>
+      </div>
+    </div>
+
+    <div class="label-field-pair">
+      <label for="configuration_currency_type">Currency Type</label>
+      <div class="text-input-bg">
+        <%= text_field :configuration, :currency_type, :value => @currency_type.config_value %>
+      </div>
+    </div>
+
+    <div class="label-field-pair">
+      <label for="configuration_currency_type">Upload Logo</label>
+      <div class="text-input-bg">
+        <%= file_field 'upload', 'datafile' %>
+      </div>
+    </div>
+
+    <div id="submit-button">
+      <%= image_submit_tag "/images/buttons/update.png" %>
+    </div>
+
+  <% end %>
+
+</div>

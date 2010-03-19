@@ -1,0 +1,66 @@
+<div id="content-header">
+  <img src="/images/edit_users/edit_users_logo.jpg" />
+  <h1>Edit User</h1>
+  <h3>Update user information</h3>
+  <div id="app-back-button">
+    <%= link_to image_tag("/images/buttons/back.png", :border => 0), :back %>
+  </div>
+</div>
+
+<div id="inner-tab-menu">
+  <ul>
+    <li><%= link_to "Change Password", :action => "user_change_password",:id=>@user.username %></li>
+  </ul>
+</div>
+
+<div id="page-yield">
+
+  <% unless flash[:notice].nil? %> <p class="flash-msg"> <%= flash[:notice] %> </p> <% end %>
+
+  <%= error_messages_for 'user' %><br/>
+
+<% form_for :user do |u| %>
+
+<div id="edit_user_form">
+  
+  <div id="necessary-field-notification"> Fields marked with <span class="necessary-field">*</span> must be filled.</div>
+
+  <div id="edit_user_form_vertical_block_left">
+
+    <div class="label-field-pair">
+      <label for="user_username">Username <span class="necessary-field">*</span></label>
+      <div class="text-input-bg"><%= u.text_field :username, :value => @user.username %></div>
+    </div>
+
+    <div class="label-field-pair">
+      <label for="user_first_name">First Name</label>
+      <div class="text-input-bg"><%= u.text_field :first_name, :value => @user.first_name %></div>
+    </div>
+
+    <div class="label-field-pair">
+      <label for="user_last_name">Last Name</label>
+      <div class="text-input-bg"><%= u.text_field :last_name, :value => @user.last_name %><br/></div>
+      </div>
+    </div>
+
+  <div id="edit_user_form_vertical_block_right">
+
+    <div class="label-field-pair">
+      <label for="user_email">Email <span class="necessary-field">*</span></label>
+      <div class="text-input-bg"><%= u.text_field :email, :value => @user.email %></div>
+    </div>
+
+    <div class="label-field-pair">
+      <label for="user_role">Role</label>
+      <div class="text-input-bg"><%= select :user, :role,
+                  ['Admin', 'Student'], :selected => @user.role_name %></div>
+    </div>
+
+  </div>
+</div>
+
+  <div class="extender"></div>
+  <%= image_submit_tag "/images/buttons/update.png", :class => "user_submit_button" %>
+<% end  %>
+
+</div>

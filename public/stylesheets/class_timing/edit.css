@@ -1,0 +1,58 @@
+
+#form-content {
+    border : 1px solid #becffb;
+    background-color : #f8f8f8;
+    height : auto; width : 600px;
+    margin : 0 0 0 20px;
+    padding : 30px 0 20px 40px;
+}
+.label-field-pair {
+    margin-top : 0px;
+    margin-left : 30px;
+}
+.label-checkbox-pair {
+    height : 80px;
+    margin-left : 30px;
+}
+.submit-button {
+    clear:both;
+    margin-left:200px;
+    padding-top:40px;
+}
+#class-timing-list {
+    width:500px;
+    margin-left:50px;
+    margin-top:50px;
+}
+#class-timing-list a {
+    color : #000;
+}
+.class-timing-th {
+    width:500px;
+    height:40px;
+    clear:both;
+    padding-left:50px;
+}
+.class-timing-tr {
+    width:500px;
+    height:25px;
+    padding-left:50px;
+    padding-top:5px;
+    clear:both;
+    background:#fff url(../../images/_global/list-bg-repeat.jpg) repeat-x;
+}
+.class-timing-td1 {
+    float:left;
+    width:100px;
+}
+.class-timing-td2 {
+    float:left;
+    width:130px;
+}
+.class-timing-td3 {
+    float:left;
+    width:130px;
+}
+.class-timing-td4 {
+    float:left;
+}

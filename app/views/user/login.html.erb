@@ -1,0 +1,61 @@
+
+<div id="wrapper">
+  <div id="top_logo">
+    <h1>Fedena</h1>
+  </div>
+
+  <div id="help_top">
+    <div id="help_link"><a href="http://www.fedena.com/help.html">Help!</a></div>
+  </div>
+
+  <div id="login_area_bg">
+
+    <% form_for :user do |form| %>
+
+    <div id="login_area">
+      <label for="username">Username</label>
+      <div id="username_textbox_bg">
+          <%= form.text_field :username,
+                              :maxlength => 40%>
+      </div>
+
+      <label for="password">Password</label>
+      <div id="password_textbox_bg">
+        <%= form.password_field :password %>
+      </div>
+
+      <div id="checkbox_area">
+        <input type="checkbox" id="remember" />
+        <label for="remember">Remember me</label>
+      </div>
+
+      <div id="submit_area">
+        <%= submit_tag "", :class => "submit" %>
+      </div>
+
+
+      <% if !flash.empty? %>
+        <div id="notice"><%= flash[:notice] %></div>
+      <% end %>
+
+      </div>
+    </div>
+    <% end %>
+  </div>
+
+  <div id="help_forgot_pw">
+    <div id="footer_links">
+      <%= link_to "Help! I've Forgotten my Password?",
+                  :controller => "user",
+                  :action => "forgot_password" %>
+    </div>
+  </div>
+
+  <div id="footer">
+    <div id="footer_links">
+      <a href="http://www.fedena.com/help.html" target="_blank">FAQ</a> <span>|</span>
+      <a href="http://www.fedena.com/" target="_blank">Fedena</a> <span>|</span>
+      <a href="http://www.fedena.com/community/" target="_blank">Support</a>
+    </div>
+  </div>
+

@@ -1,0 +1,82 @@
+<div id="content-header">
+  <img src="/images/student_details/student_details_logo.jpg" />
+  <h1>Students Attendance Report</h1>
+  <h3>Select Class</h3>
+  <div id="app-back-button">
+     <%= link_to image_tag("/images/buttons/back.png", :border => 0), :back %>
+  </div>
+</div>
+
+<div id="page-yield">
+
+  <% unless flash[:notice].nil? %> <p class="flash-msg"> <%= flash[:notice] %> </p> <% end %>
+
+  <% form_for(:student_attendance, @student_attendance) do |s| %>
+
+    <div id="report_index_content">
+      
+      <% if @student_attendance_type == "Daily" %>
+
+        <div class="label-field-pair">
+          <label for="master_student_grade">Class & Section</label>
+          <div class="text-input-bg"><%= select :student_attendance, :course_id, @courses.map {|c| [c.grade + " " + c.section, c.id]} %></div>
+        </div>
+
+      <% elsif  @student_attendance_type == "Subject Wise" %>
+
+        <div class="label-field-pair">
+          <label for="master_student_subject">Class & Subject:</label>
+          <div class="text-input-bg"><%= select :student_attendance, :subject_id, @subjects.map {|c| [c.course.grade+c.course.section+" - "+c.name, c.id]} %></div>
+        </div>
+
+      <% end %>
+
+      <div class="user_submit_button">
+        <%= image_submit_tag "/images/buttons/go.png" %>
+      </div>
+    <div class="extender"> </div>
+
+    </div>
+    <% end %>
+
+    <% if request.post? %>
+
+      <div id="att-report-table">
+
+        <p class="flash-msg"> <%= @course.grade %> - <%= @course.section %> </p>
+        
+        <div class="att-report-tr">
+          <div class="att-report-td1"> <b>Name</b> </div>
+          <div class="att-report-td2"> <b>Attendance</b> </div>
+        </div>
+
+      <% if @student_attendance_type == "Daily" %>
+
+        <%  @students.each do|r| %>
+          <% @att_count = Attendance.find_all_by_student_id(r.id).size %>
+          <div class="att-report-tr">
+            <div class="att-report-td1"> <%= link_to r.first_name + " " + r.last_name, :action=>"student_report", :id=>r.id %> </div>
+            <div class="att-report-td2"> <%= @att_count %>  </div>
+          </div>
+        <% end %>
+
+      <% else %>
+
+        <%  @students.each do |r| %>
+          <% @att_count = Attendance.count(:conditions => "student_id = #{r.id} AND subject_id = #{@subject.id}") %>
+          <div class="att-report-tr">
+            <div class="att-report-td1">
+              <%= link_to r.first_name + " " + r.last_name,
+                  :action => "student_report", :id => r.id, :id1 => @subject.id %>
+            </div>
+            <div class="att-report-td2"> <%= @att_count %>  </div>
+          </div>
+        <% end %>
+
+      <% end %>
+
+      </div>
+
+    <% end %>
+
+</div>

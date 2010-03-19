@@ -1,0 +1,26 @@
+<div id="content-header">
+  <img src="/images/manage_news/manage_news_logo.png" />
+  <h1>School News</h1>
+  <h3>Latest announcements</h3>
+  <div id="app-back-button">
+    <%= link_to image_tag("/images/buttons/back.png", :border => 0), :back %>
+  </div>
+</div>
+
+<div id="page-yield">
+
+  <% unless flash[:notice].nil? %>
+    <p class="flash-msg"> <%= flash[:notice] %> </p>
+  <% end %>
+
+  <div id="all_news">
+    <% @news.each do |r| %>
+      <div id="news_titles">
+        <% link_value = r.title %>
+        <%=  link_to link_value, :controller => 'news', :action => 'view', :id => r.id%><br/>
+        <small>posted <%= time_ago_in_words(r.created_at) %> ago</small>
+      </div>
+    <% end %>
+  </div>
+
+</div>

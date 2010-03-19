@@ -1,0 +1,23 @@
+#list {
+    margin-top:100px;
+    margin-left:100px;
+}
+#list li {
+    padding:6px 0 0 50px;
+    list-style-type:none;
+}
+#list li label input {
+    margin-right:10px;
+}
+.name_list{background:url(../../images/student_attendance/attendance_list/list_bg.jpg) no-repeat; height:30px;width:400px;}
+.att_list_names {display:inline;}
+label {display:inline;}
+.user_submit_button1 {margin-top:30px;margin-left:130px;}
+.label_field_pair {width:350px;float:left;margin-left:100px;text-align:center}
+.label_field_pair label {
+        font-weight:bold;
+        display:block;
+        color:#444;
+        margin-top:50px;
+        margin-bottom:10px;
+    }

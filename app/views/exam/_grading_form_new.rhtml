@@ -1,0 +1,7 @@
+
+<% form_remote_for :grading, :url => { :action => 'create_grading' } do |f| %>
+    <p>Name <%= f.text_field :name %></p>
+    <p>Value <%= f.text_field :min_score %></p>
+    <%= f.submit %>
+    <%= link_to 'Hide', '', :onClick => "Element.hide('grading-form');" %>
+<% end %>

@@ -1,0 +1,19 @@
+
+#all_news {
+    padding:0px;
+    height:300px;
+    width:725px;
+    margin:20px 0 0 20px;
+}
+#news_titles {
+    padding:10px 10px 10px 0;
+    text-decoration:none;
+    width:350px;
+    float:left;
+    background:#fff url(../../images/student_details/ajax_result_underline.jpg) bottom left no-repeat;
+}
+#news_titles a {
+    text-decoration:none;
+    color:#000;
+    font-weight:bold;
+}

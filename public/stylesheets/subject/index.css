@@ -1,0 +1,34 @@
+
+#subject-list {
+    height : auto; width : 600px;
+    margin : 40px 0 0 0;
+}
+#subject-list ul {
+    height : auto; width : auto;
+    margin : 20px 0 0 0;
+}
+#subject-list ul li {
+    background : #fff url(../../images/_global/list-bg-repeat.jpg) repeat-x;
+    height : 1.5em; width : auto;
+    list-style-type : none;
+    padding : 0.5em 0 0 2em;
+    
+}
+.sub_name{
+    float : left;
+    width : 400px;
+}
+.edit-link,
+.delete-link {
+    float : left;
+    font-size : 0.9em;
+    margin : 0 0 0 10px;
+}
+.edit-link a,
+.delete-link a {
+    color : #000;
+}
+#class-select {
+    height : 80px;
+    margin : 0 0 50px 50px;
+}
