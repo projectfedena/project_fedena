@@ -38,8 +38,8 @@ class UserController < ApplicationController
     render(:update) {|page| page.replace_html 'users', :partial=> 'users'}
   end
   def change_password
-    flash[:notice]="You do not have permission to change demo account password!"
-    redirect_to :action=>"dashboard"
+    #flash[:notice]="You do not have permission to change demo account password!"
+    #redirect_to :action=>"dashboard"
     
     if request.post?
      @user = current_user
